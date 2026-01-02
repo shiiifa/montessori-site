@@ -69,6 +69,13 @@ header li{
 }
 
 /*sub-header*/
+#sub-header{
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 100;
+}
+
 #sub-header-content{
     display: flex;
     justify-content: space-between;
@@ -120,6 +127,9 @@ header li{
   .navbar {
     background-color: #1e1a3e;
     overflow: hidden;
+    position: sticky;
+    top: 0;
+    z-index: 100;
   }
   
   .navbar a {
@@ -470,7 +480,7 @@ header li{
     background-color:#070131;
     color: rgba(255, 255, 255, 0.829);
     padding: 100px 0px;
-    margin-bottom: 120px;
+    margin-bottom: 0;
   }
 
   .stats-right{
