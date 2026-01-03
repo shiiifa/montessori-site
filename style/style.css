@@ -215,24 +215,35 @@ header li{
   /*background section*/
   #back-sec{
     margin-bottom: 80px;
+    height: 100vh;
+    width: 100%;
+    position: relative;
   }
 
   .overlay{
-    width: 100vw;
+    width: 100%;
     background-color: #00000042;
-    height: 450px;
+    height: 100%;
+    display: flex;
+    align-items: center;
   }
 
   .bac-sec-content{
     background-image: url(../image/im30.jpeg);
     background-position:  center center;
     background-size: cover;
+    background-repeat: no-repeat;
     height: 100%;
     width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 
   .bac-sec-content .container{
     height: 100%;
+    position: relative;
+    z-index: 1;
   }
 
   .bac-flex{
