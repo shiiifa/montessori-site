@@ -602,7 +602,6 @@ header li{
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    height: 100%;
   }
 
   #courses{
@@ -662,8 +661,6 @@ header li{
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 1;
-    justify-content: space-between;
   }
 
   #courses .course-info h4{
@@ -673,10 +670,6 @@ header li{
     font-weight: bold;
     color: #fff;
     width: 100%;
-    min-height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
   #courses .course-info .main{
@@ -686,10 +679,24 @@ header li{
     max-width: 300px;
     margin: 0 auto;
     color: rgba(255, 255, 255, 0.829);
-    min-height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  }
+
+  .more-btn {
+    display: inline-block;
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 8px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    margin: 15px 0;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    font-size: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .more-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
   }
 
   .info{
@@ -697,9 +704,10 @@ header li{
     justify-content: space-between;
     width: 100%;
     max-width: 300px;
-    margin: 0 auto;
+    margin: 15px auto 0;
     align-items: flex-start;
     gap: 10px;
+    transition: all 0.3s ease;
   }
 
   .info li{
@@ -732,7 +740,7 @@ header li{
         grid-template-rows: 1fr;
         grid-column-gap: 20px;
         grid-row-gap: 0px;
-        align-items: stretch;
+        align-items: start;
         justify-items: center;
   }
 
