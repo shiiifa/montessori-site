@@ -688,19 +688,22 @@ header li{
     max-width: 300px;
     margin: 0 auto;
     align-items: flex-start;
+    gap: 10px;
   }
 
   .info li{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    text-align: center;
+    text-align: left;
     flex: 1;
+    gap: 5px;
   }
 
   .info li h5{
-    margin-bottom: 5px;
+    margin: 0;
     font-weight: bold;
+    margin-right: 5px;
   }
 
   .info li p{
@@ -744,15 +747,19 @@ header li{
     padding-bottom: 20px;
   }
   .stats-left h3{
-    color: #fff;
+    color: #1e1a3e;
     font-size: 24px;
     font-weight: bold;
     padding-bottom: 20px;
   }
 
+  .stats-left p{
+    color: #333;
+  }
+
   #stats{
-    background-color:#070131;
-    color: rgba(255, 255, 255, 0.829);
+    background-color: #fff;
+    color: #333;
     padding: 100px 0px;
     margin-bottom: 0;
   }
@@ -763,6 +770,18 @@ header li{
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 10px;
     grid-row-gap: 10px;
+  }
+
+  #stats .card {
+    border: #1e1a3e 0.5px solid;
+  }
+
+  #stats .counter {
+    color: #1e1a3e;
+  }
+
+  #stats .label {
+    color: #333;
   }
 
   /*staff*/
