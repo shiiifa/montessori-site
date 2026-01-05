@@ -10,6 +10,40 @@
     scroll-behavior: smooth;
 }
 
+/* General header element styles */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+h5 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+h6 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
 /*header*/
 header{
     background-color: #1e1a3e;
@@ -270,8 +304,8 @@ header li{
   }
 
   .bac-flex h1{
-    font-size: 50px;
-    font-weight: bolder;
+    font-size: 36px;
+    font-weight: bold;
     padding-bottom: 20px;
   }
 
@@ -324,8 +358,8 @@ header li{
   }
 
   #about h3{
-    font-weight: bolder;
-    font-size: 30px;
+    font-weight: bold;
+    font-size: 24px;
     text-align: center;
     padding-bottom: 10px;
     color: #1e1a3e;
@@ -374,6 +408,8 @@ header li{
 
   .welc-right h3{
     margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: bold;
     color: #1e1a3e;
   }
 
@@ -430,7 +466,8 @@ header li{
   }
 
   #courses h3{
-    font-size: 30px;
+    font-size: 24px;
+    font-weight: bold;
     color: #1e1a3e;
   }
 
@@ -460,7 +497,8 @@ header li{
   .course-info h4{
     text-align: center;
     padding-bottom: 10px;
-    font-size: 20px;
+    font-size: 18px;
+    font-weight: bold;
     color: red;
   }
 
@@ -513,7 +551,8 @@ header li{
   }
   .stats-left h3{
     color: #fff;
-    font-size: 30px;
+    font-size: 24px;
+    font-weight: bold;
     padding-bottom: 20px;
   }
 
@@ -539,7 +578,8 @@ header li{
 
   #staff .h3h3{
     padding-bottom: 8px;
-    font-size: 30px;
+    font-size: 24px;
+    font-weight: bold;
     color: #1e1a3e;
   }
 
@@ -716,7 +756,8 @@ footer ul li a:hover{
 }
 
 .locate-content h3{
-  font-size: 35px;
+  font-size: 26px;
+  font-weight: bold;
   margin-bottom: 15px;
 }
 
@@ -928,7 +969,7 @@ footer ul li a:hover{
 
 @media screen and (max-width: 660px) {
     .bac-flex h1{
-        font-size: 40px;
+        font-size: 28px;
     }
 
     .bac-flex p{
@@ -936,7 +977,8 @@ footer ul li a:hover{
     }
 
     .locate-content h3{
-      font-size: 25px;
+      font-size: 20px;
+      font-weight: bold;
       margin-bottom: 15px;
     }
 }
@@ -1068,7 +1110,7 @@ footer ul li a:hover{
     }
     
     .bac-flex h1 {
-      font-size: 32px !important;
+      font-size: 24px !important;
       padding: 0 10px;
       word-wrap: break-word;
     }
@@ -1163,6 +1205,7 @@ footer ul li a:hover{
     .locate-content h3{
       text-align: center;
       font-size: 18px;
+      font-weight: bold;
     }
 }
 
