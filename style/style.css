@@ -162,7 +162,7 @@ header li{
     -webkit-backdrop-filter: blur(0px);
     overflow: visible;
     position: absolute;
-    top: 0;
+    top: 20px;
     left: 0;
     right: 0;
     width: 100%;
@@ -209,11 +209,14 @@ header li{
   }
 
   .navbar-social {
-    display: flex;
+    display: flex !important;
     align-items: center;
     gap: 8px;
     margin-left: auto;
     padding-right: 10px;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 101;
   }
 
   .navbar-social a {
@@ -222,10 +225,19 @@ header li{
     text-decoration: none;
     transition: color 0.3s ease;
     padding: 8px;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   .navbar-social a:hover {
     color: #ddd;
+  }
+  
+  .navbar-social i {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
   
   .navbar a {
@@ -941,6 +953,7 @@ header li{
     -webkit-appearance: none;
     -moz-appearance: textfield;
     appearance: none;
+    user-select: none;
   }
 
   .stat-number::-webkit-inner-spin-button,
@@ -950,6 +963,8 @@ header li{
     display: none !important;
     opacity: 0 !important;
     visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
   }
 
   .stat-number[type="number"] {
@@ -961,6 +976,17 @@ header li{
   .stat-number::after {
     display: none !important;
     content: none !important;
+  }
+  
+  .stat-item {
+    position: relative;
+  }
+  
+  .stat-item *::before,
+  .stat-item *::after {
+    display: none !important;
+    content: none !important;
+    visibility: hidden !important;
   }
   
   .stat-number * {
