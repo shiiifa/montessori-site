@@ -899,6 +899,13 @@ header li{
     gap: 8px;
   }
 
+  .stat-item *::before,
+  .stat-item *::after {
+    display: none !important;
+    content: none !important;
+    visibility: hidden !important;
+  }
+
   .stat-icon {
     font-size: 32px;
     color: #1E1A3E;
@@ -918,11 +925,24 @@ header li{
   .stat-number::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
+    display: none !important;
   }
 
   .stat-number[type="number"] {
     -moz-appearance: textfield;
     appearance: none;
+  }
+
+  .stat-number::before,
+  .stat-number::after {
+    display: none !important;
+    content: none !important;
+  }
+
+  .stat-item::before,
+  .stat-item::after {
+    display: none !important;
+    content: none !important;
   }
 
   #stats .card {
