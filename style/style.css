@@ -184,6 +184,18 @@ header li{
     gap: 20px;
   }
 
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+  }
+
+  .navbar-logo-img {
+    max-width: 80px;
+    height: auto;
+    display: block;
+  }
+
   .navbar-links {
     display: flex;
     align-items: center;
@@ -1480,6 +1492,9 @@ footer ul li a:hover{
   }
 
   @media screen and (max-width: 600px) {
+    .navbar-logo-img {
+      max-width: 60px;
+    }
     .navbar-links {
       display: none;
     }
