@@ -102,23 +102,35 @@
                 <p>We take pride in our inclusive and supportive learning environment, where every student is encouraged to explore their passions, embrace diversity, and develop strong character traits. Our school community fosters a sense of belonging, encouraging students to become confident, compassionate, and empathetic individuals.</p>
             </div>
             <div class="stats-right">
-                <div class="card">
-                    <i class="fas fa-users stat-icon"></i>
-                    <span class="label">Students</span>
+                <div class="stat-item">
+                    <span class="stat-number">200</span>
+                    <div class="card">
+                        <i class="fas fa-users stat-icon"></i>
+                        <span class="label">Students</span>
+                    </div>
                 </div>
                 
-                <div class="card">
-                    <i class="fas fa-book stat-icon"></i>
-                    <span class="label">Courses</span>
+                <div class="stat-item">
+                    <span class="stat-number">20</span>
+                    <div class="card">
+                        <i class="fas fa-book stat-icon"></i>
+                        <span class="label">Courses</span>
+                    </div>
                 </div>
                 
-                <div class="card">
-                    <i class="fas fa-futbol stat-icon"></i>
-                    <span class="label">Extra-curricular activities</span>
+                <div class="stat-item">
+                    <span class="stat-number">20</span>
+                    <div class="card">
+                        <i class="fas fa-futbol stat-icon"></i>
+                        <span class="label">Extra-curricular activities</span>
+                    </div>
                 </div>
-                <div class="card">
-                    <i class="fas fa-check-circle stat-icon"></i>
-                    <span class="label">% B.E.C.E Passes</span>
+                <div class="stat-item">
+                    <span class="stat-number">80</span>
+                    <div class="card">
+                        <i class="fas fa-check-circle stat-icon"></i>
+                        <span class="label">% B.E.C.E Passes</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -260,10 +272,11 @@
 <script src="./home.js"></script>
 <script>
     function animateCounter() {
-        var counters = document.getElementsByClassName("counter");
+        var counters = document.getElementsByClassName("stat-number");
       
         for (var i = 0; i < counters.length; i++) {
-          var target = parseInt(counters[i].getAttribute("data-target"));
+          var target = parseInt(counters[i].textContent);
+          counters[i].textContent = 0;
           var duration = 2000; // Animation duration in milliseconds (faster)
           var increment = Math.ceil(target / (duration / 16)); // Increment per frame (60fps)
       
@@ -271,12 +284,12 @@
           function updateCounter(counter, current, target, increment) {
             if (current < target) {
               var next = Math.min(current + increment, target);
-              counter.innerText = next;
+              counter.textContent = next;
               requestAnimationFrame(function() {
                 updateCounter(counter, next, target, increment);
               });
             } else {
-              counter.innerText = target;
+              counter.textContent = target;
             }
           }
       

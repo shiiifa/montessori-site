@@ -868,6 +868,21 @@ header li{
     grid-row-gap: 5px;
   }
 
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .stat-number {
+    font-size: 36px;
+    font-weight: bold;
+    color: #1E1A3E;
+    margin-bottom: 10px;
+    line-height: 1;
+  }
+
   #stats .card {
     border: #1e1a3e 0.5px solid;
     display: flex;
@@ -876,6 +891,7 @@ header li{
     justify-content: center;
     padding: 20px 15px;
     margin: 0;
+    width: 100%;
   }
 
   .stat-icon {
