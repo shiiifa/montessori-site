@@ -349,11 +349,13 @@ header li{
   }
 
   .school-logo-container{
-    margin-bottom: 20px;
-    margin-top: -60px;
+    position: absolute;
+    top: 70px;
+    left: 20px;
+    z-index: 10;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 
   .school-logo-hero{
@@ -1419,6 +1421,11 @@ footer ul li a:hover{
 }
 
 @media screen and (max-width: 660px) {
+    .school-logo-container{
+      top: 60px;
+      left: 15px;
+    }
+    
     .school-logo-hero{
       max-width: 150px;
     }
@@ -1598,6 +1605,11 @@ footer ul li a:hover{
       max-width: 100% !important;
       padding: 0 10px;
       word-wrap: break-word;
+    }
+    
+    .school-logo-container{
+      top: 60px;
+      left: 10px;
     }
     
     .school-logo-hero{
