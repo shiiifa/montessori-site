@@ -1040,7 +1040,7 @@ header li{
   .map-button {
     display: inline-block;
     text-align: center;
-    margin: 40px auto;
+    margin: 0;
     color: #fff;
     text-decoration: none;
     font-weight: 600;
@@ -1092,6 +1092,10 @@ footer {
 .footer-column {
   flex-basis: 300px;
   margin-bottom: 20px;
+}
+
+.footer-locate {
+  text-align: left;
 }
 
 .footer-column h3 {
@@ -1190,8 +1194,13 @@ footer ul li a:hover{
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  margin-bottom: 60px;
+  margin-bottom: 0;
   position: relative;
+  overflow: hidden;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 .loc{
@@ -1209,19 +1218,27 @@ footer ul li a:hover{
 }
 
 .locate-content{
-  height: 70%;
-  width: 70%;
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: transparent;
+  gap: 20px;
 }
 
 .locate-content h3{
-  font-size: 26px;
+  font-size: 36px;
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: 0;
+  color: #fff;
+}
+
+.locate-content p{
+  font-size: 20px;
+  color: #fff;
+  margin: 0;
 }
 
 .loc-content{
