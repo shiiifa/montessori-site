@@ -859,7 +859,7 @@ header li{
 
   .stats-image{
     flex: 0 0 auto;
-    width: 400px;
+    width: 250px;
   }
 
   .stats-image img{
@@ -1056,8 +1056,8 @@ footer ul li a:hover{
 
 .social-links {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  flex-direction: row;
+  gap: 15px;
   margin-top: 15px;
 }
 
@@ -1066,12 +1066,21 @@ footer ul li a:hover{
   text-decoration: none;
   display: flex;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
   transition: color 0.3s ease;
 }
 
 .social-link:hover {
   color: #ddd;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .social-link i {
