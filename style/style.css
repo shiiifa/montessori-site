@@ -472,12 +472,14 @@ header li{
     align-items: center;
     width: 100%;
     margin: 0 auto;
+    overflow: visible;
   }
 
   .proprietor-message-text-centered {
     max-width: 800px;
     width: 100%;
     text-align: center;
+    overflow: visible;
   }
 
   .proprietor-quote-centered {
@@ -489,6 +491,13 @@ header li{
     margin: 0 auto;
     position: relative;
     padding: 0 20px;
+    overflow: visible;
+    max-height: none;
+    height: auto;
+  }
+
+  #messages {
+    overflow: visible;
   }
 
   .proprietor-quote-centered .quote-start {
