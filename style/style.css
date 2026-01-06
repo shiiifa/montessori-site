@@ -455,14 +455,15 @@ header li{
   .proprietor-message {
     display: flex;
     align-items: flex-start;
-    max-width: 900px;
+    max-width: 500px;
     margin-left: 0;
-    margin-top: 40px;
+    margin-top: 20px;
   }
 
   .proprietor-message-text {
     flex: 1;
     width: 100%;
+    overflow: hidden;
   }
 
   #courses .proprietor-quote {
@@ -474,6 +475,8 @@ header li{
     margin: 0;
     position: relative;
     padding-left: 25px;
+    overflow: visible;
+    max-height: none;
   }
 
   .proprietor-quote {
