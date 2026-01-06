@@ -109,26 +109,27 @@
                 <h3>ACHIEVEMENTS</h3>
                 <p>Academically, our students have consistently achieved outstanding results, surpassing regional and national averages. Our dedicated teachers provide quality instruction, fostering a love for learning and equipping students with the knowledge and skills necessary for future success.</p>
                 <p>We take pride in our inclusive and supportive learning environment, where every student is encouraged to explore their passions, embrace diversity, and develop strong character traits. Our school community fosters a sense of belonging, encouraging students to become confident, compassionate, and empathetic individuals.</p>
-                <div class="ach-img">
-                    <img src="./image/ach.jpg" alt="">
-                </div>
             </div>
             <div class="stats-right">
                 <div class="card">
+                    <i class="fas fa-users stat-icon"></i>
                     <span class="counter" data-target="200">0</span>
                     <span class="label">Students</span>
                 </div>
                 
                 <div class="card">
+                    <i class="fas fa-book stat-icon"></i>
                     <span class="counter" data-target="20">0</span>
                     <span class="label">Courses</span>
                 </div>
                 
                 <div class="card">
+                    <i class="fas fa-futbol stat-icon"></i>
                     <span class="counter" data-target="20">0</span>
                     <span class="label">Extra-curricular activities</span>
                 </div>
                 <div class="card">
+                    <i class="fas fa-check-circle stat-icon"></i>
                     <span class="counter" data-target="80">0</span>
                     <span class="label">% B.E.C.E Passes</span>
                 </div>
@@ -276,16 +277,17 @@
       
         for (var i = 0; i < counters.length; i++) {
           var target = parseInt(counters[i].getAttribute("data-target"));
-          var duration = 200000; // Animation duration in milliseconds
-          var increment = Math.ceil(target / (duration / 10)); // Increment per 10ms
+          var duration = 2000; // Animation duration in milliseconds (faster)
+          var increment = Math.ceil(target / (duration / 16)); // Increment per frame (60fps)
       
           // Function to update the counter
           function updateCounter(counter, current, target, increment) {
             if (current < target) {
-              counter.innerText = current + increment;
-              setTimeout(function() {
-                updateCounter(counter, current + increment, target, increment);
-              }, 10);
+              var next = Math.min(current + increment, target);
+              counter.innerText = next;
+              requestAnimationFrame(function() {
+                updateCounter(counter, next, target, increment);
+              });
             } else {
               counter.innerText = target;
             }
