@@ -938,24 +938,35 @@ header li{
     margin: 0;
     line-height: 1;
     list-style: none;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    appearance: none;
   }
 
   .stat-number::-webkit-inner-spin-button,
   .stat-number::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+    -webkit-appearance: none !important;
+    margin: 0 !important;
     display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
   }
 
   .stat-number[type="number"] {
-    -moz-appearance: textfield;
-    appearance: none;
+    -moz-appearance: textfield !important;
+    appearance: none !important;
   }
 
   .stat-number::before,
   .stat-number::after {
     display: none !important;
     content: none !important;
+  }
+  
+  .stat-number * {
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
   }
 
   .stat-item::before,
