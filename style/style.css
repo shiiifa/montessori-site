@@ -512,7 +512,7 @@ header li{
   }
 
   #courses .proprietor-quote {
-    color: rgba(255, 255, 255, 0.829);
+    color: #666;
     font-size: 15px;
     line-height: 24px;
     font-style: italic;
@@ -544,7 +544,7 @@ header li{
   }
 
   #courses .quote-mark {
-    color: rgba(255, 255, 255, 0.3);
+    color: #999;
   }
 
   .quote-start {
@@ -658,8 +658,8 @@ header li{
   }
 
   #courses{
-    background-color: #070131;
-    color: rgba(255, 255, 255, 0.829);
+    background-color: #fff;
+    color: #333;
     padding: 100px 0px;
     margin-bottom: 0;
   }
@@ -667,7 +667,7 @@ header li{
   #courses h3{
     font-size: 24px;
     font-weight: bold;
-    color: #fff;
+    color: #1e1a3e;
   }
 
   #courses h3,
@@ -677,7 +677,7 @@ header li{
   }
 
   #courses .cent{
-    color: rgba(255, 255, 255, 0.829);
+    color: #333;
   }
 
   #courses .line-bod{
@@ -723,7 +723,7 @@ header li{
     padding-bottom: 20px;
     font-size: 18px;
     font-weight: bold;
-    color: #fff;
+    color: #1e1a3e;
     width: 100%;
     margin: 0;
   }
@@ -748,13 +748,13 @@ header li{
     width: 100%;
     max-width: 300px;
     margin: 0 auto;
-    color: rgba(255, 255, 255, 0.829);
+    color: #333;
   }
 
   .more-btn {
     display: inline-block;
     color: #fff;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: #070131;
     padding: 8px 20px;
     border-radius: 4px;
     text-decoration: none;
@@ -762,12 +762,12 @@ header li{
     transition: background-color 0.3s ease;
     cursor: pointer;
     font-size: 14px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid #070131;
     text-align: center;
   }
 
   .more-btn:hover {
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: #1e1a3e;
   }
 
   .info{
@@ -794,7 +794,7 @@ header li{
     margin: 0;
     font-weight: bold;
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.9);
+    color: #666;
     text-transform: uppercase;
     letter-spacing: 0.5px;
   }
@@ -802,13 +802,17 @@ header li{
   .info li p{
     margin: 0;
     font-size: 15px;
-    color: rgba(255, 255, 255, 1);
+    color: #333;
     font-weight: 500;
   }
 
   #courses .info h5,
   #courses .info p{
-    color: rgba(255, 255, 255, 0.829);
+    color: #333;
+  }
+
+  #courses .info h5{
+    color: #666;
   }
 
   #courses-content{
