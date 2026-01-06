@@ -162,7 +162,7 @@ header li{
     -webkit-backdrop-filter: blur(0px);
     overflow: visible;
     position: absolute;
-    top: 20px;
+    top: 50px;
     left: 0;
     right: 0;
     width: 100%;
@@ -217,6 +217,7 @@ header li{
     visibility: visible !important;
     opacity: 1 !important;
     z-index: 101;
+    position: relative;
   }
 
   .navbar-social a {
@@ -228,6 +229,8 @@ header li{
     display: flex !important;
     visibility: visible !important;
     opacity: 1 !important;
+    position: relative;
+    z-index: 102;
   }
 
   .navbar-social a:hover {
@@ -238,6 +241,8 @@ header li{
     display: inline-block !important;
     visibility: visible !important;
     opacity: 1 !important;
+    position: relative;
+    z-index: 102;
   }
   
   .navbar a {
@@ -954,10 +959,12 @@ header li{
     -moz-appearance: textfield;
     appearance: none;
     user-select: none;
+    display: inline-block;
   }
 
   .stat-number::-webkit-inner-spin-button,
-  .stat-number::-webkit-outer-spin-button {
+  .stat-number::-webkit-outer-spin-button,
+  .stat-number::-webkit-clear-button {
     -webkit-appearance: none !important;
     margin: 0 !important;
     display: none !important;
@@ -965,9 +972,11 @@ header li{
     visibility: hidden !important;
     width: 0 !important;
     height: 0 !important;
+    pointer-events: none !important;
   }
 
-  .stat-number[type="number"] {
+  .stat-number[type="number"],
+  input.stat-number {
     -moz-appearance: textfield !important;
     appearance: none !important;
   }
@@ -976,6 +985,26 @@ header li{
   .stat-number::after {
     display: none !important;
     content: none !important;
+  }
+
+  /* Remove any number input spinners globally for stat-numbers */
+  .stat-item input[type="number"].stat-number,
+  .stat-item .stat-number {
+    -moz-appearance: textfield !important;
+  }
+
+  .stat-item input[type="number"].stat-number::-webkit-outer-spin-button,
+  .stat-item input[type="number"].stat-number::-webkit-inner-spin-button,
+  .stat-item .stat-number::-webkit-outer-spin-button,
+  .stat-item .stat-number::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+    margin: 0 !important;
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+    pointer-events: none !important;
   }
   
   .stat-item {
@@ -1621,7 +1650,7 @@ body {
     /* Fix navbar positioning */
     .navbar {
       position: absolute;
-      top: 0;
+      top: 30px;
       left: 0;
       right: 0;
       width: 100%;
