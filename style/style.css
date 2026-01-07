@@ -162,7 +162,7 @@ header li{
     -webkit-backdrop-filter: blur(0px);
     overflow: visible;
     position: absolute;
-    top: 50px;
+    top: 0;
     left: 0;
     right: 0;
     width: 100%;
@@ -175,6 +175,7 @@ header li{
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     position: fixed;
+    top: 0;
   }
   
   .navbar .container {
@@ -1650,7 +1651,7 @@ body {
     /* Fix navbar positioning */
     .navbar {
       position: absolute;
-      top: 30px;
+      top: 0;
       left: 0;
       right: 0;
       width: 100%;
@@ -1658,6 +1659,7 @@ body {
     
     .navbar.scrolled {
       position: fixed;
+      top: 0;
     }
   }
 
@@ -1720,7 +1722,7 @@ body {
       
       .navbar.responsive .icon {
         position: absolute;
-        left: 0;
+        right: 0;
         top: 0;
         z-index: 101;
         order: 1;
