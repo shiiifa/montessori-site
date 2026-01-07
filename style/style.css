@@ -956,16 +956,23 @@ header li{
     margin: 0;
     line-height: 1;
     list-style: none;
-    -webkit-appearance: none;
-    -moz-appearance: textfield;
-    appearance: none;
+    -webkit-appearance: none !important;
+    -moz-appearance: textfield !important;
+    appearance: none !important;
     user-select: none;
     display: inline-block;
+    overflow: hidden;
+    position: relative;
   }
 
+  /* COMPLETELY REMOVE ALL SPINNER ARROWS - NO EXCEPTIONS */
   .stat-number::-webkit-inner-spin-button,
   .stat-number::-webkit-outer-spin-button,
-  .stat-number::-webkit-clear-button {
+  .stat-number::-webkit-clear-button,
+  .stat-number::-webkit-inner-spin-button::before,
+  .stat-number::-webkit-inner-spin-button::after,
+  .stat-number::-webkit-outer-spin-button::before,
+  .stat-number::-webkit-outer-spin-button::after {
     -webkit-appearance: none !important;
     margin: 0 !important;
     display: none !important;
@@ -974,6 +981,8 @@ header li{
     width: 0 !important;
     height: 0 !important;
     pointer-events: none !important;
+    position: absolute !important;
+    left: -9999px !important;
   }
 
   .stat-number[type="number"],
@@ -990,14 +999,19 @@ header li{
 
   /* Remove any number input spinners globally for stat-numbers */
   .stat-item input[type="number"].stat-number,
-  .stat-item .stat-number {
+  .stat-item .stat-number,
+  .stat-item span.stat-number {
     -moz-appearance: textfield !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
   }
 
   .stat-item input[type="number"].stat-number::-webkit-outer-spin-button,
   .stat-item input[type="number"].stat-number::-webkit-inner-spin-button,
   .stat-item .stat-number::-webkit-outer-spin-button,
-  .stat-item .stat-number::-webkit-inner-spin-button {
+  .stat-item .stat-number::-webkit-inner-spin-button,
+  .stat-item span.stat-number::-webkit-outer-spin-button,
+  .stat-item span.stat-number::-webkit-inner-spin-button {
     -webkit-appearance: none !important;
     margin: 0 !important;
     display: none !important;
@@ -1006,10 +1020,13 @@ header li{
     width: 0 !important;
     height: 0 !important;
     pointer-events: none !important;
+    position: absolute !important;
+    left: -9999px !important;
   }
   
   .stat-item {
     position: relative;
+    overflow: hidden;
   }
   
   .stat-item *::before,
@@ -1031,6 +1048,22 @@ header li{
     content: none !important;
   }
 
+  /* NUCLEAR OPTION - Hide ANY potential spinner controls in stat items */
+  .stat-item *::-webkit-inner-spin-button,
+  .stat-item *::-webkit-outer-spin-button,
+  .stat-item *::-webkit-clear-button {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    left: -9999px !important;
+  }
+
   #stats .card {
     border: none;
     display: flex;
@@ -1047,6 +1080,23 @@ header li{
     font-size: 14px;
     text-align: center;
     margin: 0;
+  }
+
+  /* ABSOLUTE GUARANTEE - No spinner arrows anywhere in stats section */
+  #stats *::-webkit-inner-spin-button,
+  #stats *::-webkit-outer-spin-button,
+  #stats *::-webkit-clear-button {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    pointer-events: none !important;
+    position: absolute !important;
+    left: -9999px !important;
+    -webkit-appearance: none !important;
   }
 
   /*staff*/
