@@ -227,82 +227,6 @@
             </div>
         </div>
     </section>
-    <section id="recent-works">
-        <div class="container">
-            <h3 data-aos="fade" data-aos-duration="2000">RECENT WORKS</h3>
-            <p class="cent" data-aos="fade" data-aos-duration="2000" style="text-align: center; max-width: 800px; margin: auto; line-height: 30px; padding-bottom: 40px;">Explore my latest portfolio projects</p>
-            <div class="works-carousel-container">
-                <div class="works-carousel" id="worksCarousel">
-                    <div class="work-tile active">
-                        <div class="work-preview">
-                            <img src="./image/im99.jpeg" alt="Project 1 Preview">
-                        </div>
-                        <div class="work-info">
-                            <h4>Project 1</h4>
-                            <p>Description of project 1</p>
-                            <a href="#" class="view-site-btn" target="_blank">View Full Site</a>
-                        </div>
-                    </div>
-                    <div class="work-tile">
-                        <div class="work-preview">
-                            <img src="./image/im99.jpeg" alt="Project 2 Preview">
-                        </div>
-                        <div class="work-info">
-                            <h4>Project 2</h4>
-                            <p>Description of project 2</p>
-                            <a href="#" class="view-site-btn" target="_blank">View Full Site</a>
-                        </div>
-                    </div>
-                    <div class="work-tile">
-                        <div class="work-preview">
-                            <img src="./image/im99.jpeg" alt="Project 3 Preview">
-                        </div>
-                        <div class="work-info">
-                            <h4>Project 3</h4>
-                            <p>Description of project 3</p>
-                            <a href="#" class="view-site-btn" target="_blank">View Full Site</a>
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-next-btn" onclick="nextWork()">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-        </div>
-    </section>
-    <section id="freelance">
-        <div class="container">
-            <h3 data-aos="fade" data-aos-duration="2000">FREELANCE WORK</h3>
-            <p class="cent" data-aos="fade" data-aos-duration="2000" style="text-align: center; max-width: 800px; margin: auto; line-height: 30px; padding-bottom: 40px;">Projects I've built for clients</p>
-            <div class="freelance-project">
-                <div class="freelance-preview" data-aos="fade" data-aos-duration="2000">
-                    <img src="./image/im99.jpeg" alt="Elmir Portfolio Preview">
-                </div>
-                <div class="freelance-info" data-aos="fade" data-aos-duration="2000">
-                    <h4>Elmir Mohammed Portfolio</h4>
-                    <p class="tech-stack"><strong>Technologies:</strong> HTML, CSS</p>
-                    <p class="project-description">A personal portfolio website built for Elmir Mohammed, an Electrical and Electronics Engineering graduate from Ashesi University. The website showcases his academic achievements, research works, awards, and professional experience. Built using pure HTML and CSS, the site features a clean, modern design with smooth navigation and responsive layout.</p>
-                    <a href="https://elmir-portfolio.vercel.app/" class="view-site-btn" target="_blank">View Full Site</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="testimonials">
-        <div class="container">
-            <h3 data-aos="fade" data-aos-duration="2000">TESTIMONIALS</h3>
-            <p class="cent" data-aos="fade" data-aos-duration="2000" style="text-align: center; max-width: 800px; margin: auto; line-height: 30px; padding-bottom: 40px;">What my clients say about my work</p>
-            <div class="testimonial-item" data-aos="fade" data-aos-duration="2000">
-                <div class="testimonial-content">
-                    <p class="testimonial-text">
-                        <span class="quote-mark quote-start">&ldquo;</span>
-                        Shifa is an exceptionally professional and reliable individual. She consistently met deadlines and communicated through channels that fit my schedule, making the entire collaboration seamless. Her time consciousness and commitment to maintaining a high standard of work were truly impressive. What stood out most was her flexibility; she was always willing to make adjustments to ensure the final result perfectly matched my vision. I would highly recommend Shifa for any project requiring strong web design skills and a professional touch. I loved how clean and well-structured the website was. The design was simple, elegant, and perfectly aligned with what I needed. The responsiveness was top-notch across all devices, and I encountered no issues with timelines or delivery. Everything was handled with a high level of professionalism from start to finish.
-                        <span class="quote-mark quote-end">&rdquo;</span>
-                    </p>
-                    <p class="testimonial-author">— Elmir Mohammed</p>
-                </div>
-            </div>
-        </div>
-    </section>
     <footer>
         <div class="container2">
           <div class="footer-content">
@@ -412,33 +336,6 @@
           navbar.classList.remove('scrolled');
         }
       });
-      
-      // Recent Works Carousel
-      let currentWorkIndex = 0;
-      const workTiles = document.querySelectorAll('.work-tile');
-      const totalWorks = workTiles.length;
-
-      function showWork(index) {
-        // Remove active class from all tiles
-        workTiles.forEach(tile => {
-          tile.classList.remove('active');
-        });
-        
-        // Add active class to current tile
-        if (workTiles[index]) {
-          workTiles[index].classList.add('active');
-        }
-      }
-
-      function nextWork() {
-        currentWorkIndex = (currentWorkIndex + 1) % totalWorks;
-        showWork(currentWorkIndex);
-      }
-
-      // Initialize: show first work
-      if (workTiles.length > 0) {
-        showWork(0);
-      }
       
 </script>
 </html>
