@@ -84,23 +84,28 @@
         }
 
         .gallery {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-gap: 10px;
-            max-width: 1000px;
+            column-count: 3;
+            column-gap: 10px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 50px 0px;
+            padding: 50px 20px;
         }
         
         .gallery img {
             width: 100%;
             height: auto;
+            display: block;
+            margin-bottom: 10px;
+            break-inside: avoid;
+            page-break-inside: avoid;
             animation: scale 0.3s ease-in-out;
             transition: transform 0.3s ease-in-out;
+            border-radius: 4px;
         }
         
         .gallery img:hover {
-            transform: scale(1.2);
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .container4 {
@@ -118,9 +123,21 @@
             100% { transform: scale(1); opacity: 1; }
         }
         
+        @media (max-width: 900px) {
+            .gallery {
+                column-count: 2;
+            }
+        }
+
         @media (max-width: 600px) {
             .gallery {
-                grid-template-columns: repeat(2, 1fr);
+                column-count: 2;
+                column-gap: 8px;
+                padding: 50px 10px;
+            }
+
+            .gallery img {
+                margin-bottom: 8px;
             }
 
             .gallery-hero-flex h1 {
@@ -135,7 +152,7 @@
         
         @media (max-width: 400px) {
             .gallery {
-                grid-template-columns: 1fr;
+                column-count: 1;
             }
 
             .gallery-hero-flex h1 {
@@ -176,7 +193,7 @@
                 <div class="container">
                     <div class="gallery-hero-flex">
                         <h1 data-aos="fade" data-aos-duration="2000">GALLERY</h1>
-                        <a href="#gallery-section" class="gallery-view-btn" data-aos="fade" data-aos-duration="2000" data-aos-delay="200">View Gallery</a>
+                        <a href="#gallery-section" class="gallery-view-btn" data-aos="fade" data-aos-duration="2000" data-aos-delay="200">View</a>
                     </div>
                 </div>
             </div>
@@ -185,111 +202,86 @@
     <section id="gallery-section">
         <div class="container4">
         <div class="gallery">
-            <img src="./image/im1.jpeg" alt="Image 1">
-            <img src="./image/im2.jpeg" alt="Image 2">
-            <img src="./image/im3.jpeg" alt="Image 3">
-            <img src="./image/im4.jpeg" alt="Image 4">
-            <img src="./image/im5.jpeg" alt="Image 5">
-            <img src="./image/im6.jpeg" alt="Image 6">
-            <img src="./image/im7.jpeg" alt="Image 6">
-            <img src="./image/im8.jpeg" alt="Image 6">
-            <img src="./image/im9.jpeg" alt="Image 6">
-            <img src="./image/im10.jpeg" alt="Image 6">
-            <img src="./image/im11.jpeg" alt="Image 6">
-            <img src="./image/im12.jpeg" alt="Image 6">
-            <img src="./image/im13.jpeg" alt="Image 6">
-            <img src="./image/im14.jpeg" alt="Image 6">
-            <img src="./image/im15.jpeg" alt="Image 6">
-            <img src="./image/im16.jpeg" alt="Image 6">
-            <img src="./image/im17.jpeg" alt="Image 6">
-            <img src="./image/im18.jpeg" alt="Image 6">
-            <img src="./image/im19.jpeg" alt="Image 6">
-            <img src="./image/im20.jpeg" alt="Image 6">
-            <img src="./image/im21.jpeg" alt="Image 6">
-            <img src="./image/im22.jpeg" alt="Image 6">
-            <img src="./image/im23.jpeg" alt="Image 6">
-            <img src="./image/im24.jpeg" alt="Image 6">
-            <img src="./image/im25.jpeg" alt="Image 6">
-            <img src="./image/im26.jpeg" alt="Image 6">
-            <img src="./image/im27.jpeg" alt="Image 6">
-            <img src="./image/im28.jpeg" alt="Image 6">
-            <img src="./image/im29.jpeg" alt="Image 6">
-            <img src="./image/im30.jpeg" alt="Image 6">
-            <img src="./image/im31.jpeg" alt="Image 6">
-            <img src="./image/im32.jpeg" alt="Image 6">
-            <img src="./image/im32.jpeg" alt="Image 6">
-            <img src="./image/im33.jpeg" alt="Image 6">
-            <img src="./image/im34.jpeg" alt="Image 6">
-            <img src="./image/im35.jpeg" alt="Image 6">
-            <img src="./image/im36.jpeg" alt="Image 6">
-            <img src="./image/im37.jpeg" alt="Image 6">
-            <img src="./image/im38.jpeg" alt="Image 6">
-            <img src="./image/im39.jpeg" alt="Image 6">
-            <img src="./image/im40.jpeg" alt="Image 6">
-            <img src="./image/im41.jpeg" alt="Image 6">
-            <img src="./image/im43.jpeg" alt="Image 6">
-            <img src="./image/im44.jpeg" alt="Image 6">
-            <img src="./image/im45.jpeg" alt="Image 6">
-            <img src="./image/im46.jpeg" alt="Image 6">
-            <img src="./image/im47.jpeg" alt="Image 6">
-            <img src="./image/im48.jpeg" alt="Image 6">
-            <img src="./image/im49.jpeg" alt="Image 6">
-            <img src="./image/im50.jpeg" alt="Image 6">
-            <img src="./image/im51.jpeg" alt="Image 6">
-            <img src="./image/im52.jpeg" alt="Image 6">
-            <img src="./image/im53.jpeg" alt="Image 6">
-            <img src="./image/im54.jpeg" alt="Image 6">
-            <img src="./image/im55.jpeg" alt="Image 6">
-            <img src="./image/im56.jpeg" alt="Image 6">
-            <img src="./image/im58.jpeg" alt="Image 6">
-            <img src="./image/im59.jpeg" alt="Image 6">
-            <img src="./image/im60.jpeg" alt="Image 6">
-            <img src="./image/im61.jpeg" alt="Image 6">
-            <img src="./image/im62.jpeg" alt="Image 6">
-            <img src="./image/im63.jpeg" alt="Image 6">
-            <img src="./image/im64.jpeg" alt="Image 6">
-            <img src="./image/im65.jpeg" alt="Image 6">
-            <img src="./image/im66.jpeg" alt="Image 6">
-            <img src="./image/im67.jpeg" alt="Image 6">
-            <img src="./image/im68.jpeg" alt="Image 6">
-            <img src="./image/im69.jpeg" alt="Image 6">
-            <img src="./image/im70.jpeg" alt="Image 6">
-            <img src="./image/im71.jpeg" alt="Image 6">
-            <img src="./image/im72.jpeg" alt="Image 6">
-            <img src="./image/im73.jpeg" alt="Image 6">
-            <img src="./image/im74.jpeg" alt="Image 6">
-            <img src="./image/im75.jpeg" alt="Image 6">
-            <img src="./image/im76.jpeg" alt="Image 6">
-            <img src="./image/im77.jpeg" alt="Image 6">
-            <img src="./image/im78.jpeg" alt="Image 6">
-            <img src="./image/im79.jpeg" alt="Image 6">
-            <img src="./image/im80.jpeg" alt="Image 6">
-            <img src="./image/im81.jpeg" alt="Image 6">
-            <img src="./image/im82.jpeg" alt="Image 6">
-            <img src="./image/im83.jpeg" alt="Image 6">
-            <img src="./image/im84.jpeg" alt="Image 6">
-            <img src="./image/im85.jpeg" alt="Image 6">
-            <img src="./image/im86.jpeg" alt="Image 6">
-            <img src="./image/im87.jpeg" alt="Image 6">
-            <img src="./image/im88.jpeg" alt="Image 6">
-            <img src="./image/im89.jpeg" alt="Image 6">
-            <img src="./image/im90.jpeg" alt="Image 6">
-            <img src="./image/im91.jpeg" alt="Image 6">
-            <img src="./image/im92.jpeg" alt="Image 6">
-            <img src="./image/im93.jpeg" alt="Image 6">
-            <img src="./image/im94.jpeg" alt="Image 6">
-            <img src="./image/im95.jpeg" alt="Image 6">
-            <img src="./image/im96.jpeg" alt="Image 6">
-            <img src="./image/im97.jpeg" alt="Image 6">
-            <img src="./image/im98.jpeg" alt="Image 6">
-            <img src="./image/im99.jpeg" alt="Image 6">
-            <img src="./image/im100.jpeg" alt="Image 6">
-            <img src="./image/im101.jpeg" alt="Image 6">
-            <img src="./image/im102.jpeg" alt="Image 6">
-            <img src="./image/im103.jpeg" alt="Image 6">
-            <img src="./image/im104.jpeg" alt="Image 6">
-            <img src="./image/im105.jpeg" alt="Image 6">
-            <img src="./image/im106.jpeg" alt="Image 6">
+            <img src="./image/im1.jpeg" alt="Gallery Image 1">
+            <img src="./image/im2.jpeg" alt="Gallery Image 2">
+            <img src="./image/im3.jpeg" alt="Gallery Image 3">
+            <img src="./image/im4.jpeg" alt="Gallery Image 4">
+            <img src="./image/im5.jpeg" alt="Gallery Image 5">
+            <img src="./image/im6.jpeg" alt="Gallery Image 6">
+            <img src="./image/im7.jpeg" alt="Gallery Image 7">
+            <img src="./image/im8.jpeg" alt="Gallery Image 8">
+            <img src="./image/im9.jpeg" alt="Gallery Image 9">
+            <img src="./image/im10.jpeg" alt="Gallery Image 10">
+            <img src="./image/im11.jpeg" alt="Gallery Image 11">
+            <img src="./image/im12.jpeg" alt="Gallery Image 12">
+            <img src="./image/im13.jpeg" alt="Gallery Image 13">
+            <img src="./image/im14.jpeg" alt="Gallery Image 14">
+            <img src="./image/im15.jpeg" alt="Gallery Image 15">
+            <img src="./image/im16.jpeg" alt="Gallery Image 16">
+            <img src="./image/im17.jpeg" alt="Gallery Image 17">
+            <img src="./image/im18.jpeg" alt="Gallery Image 18">
+            <img src="./image/im19.jpeg" alt="Gallery Image 19">
+            <img src="./image/im20.jpeg" alt="Gallery Image 20">
+            <img src="./image/im21.jpeg" alt="Gallery Image 21">
+            <img src="./image/im22.jpeg" alt="Gallery Image 22">
+            <img src="./image/im23.jpeg" alt="Gallery Image 23">
+            <img src="./image/im24.jpeg" alt="Gallery Image 24">
+            <img src="./image/im25.jpeg" alt="Gallery Image 25">
+            <img src="./image/im26.jpeg" alt="Gallery Image 26">
+            <img src="./image/im27.jpeg" alt="Gallery Image 27">
+            <img src="./image/im28.jpeg" alt="Gallery Image 28">
+            <img src="./image/im29.jpeg" alt="Gallery Image 29">
+            <img src="./image/im30.jpeg" alt="Gallery Image 30">
+            <img src="./image/im32.jpeg" alt="Gallery Image 32">
+            <img src="./image/im56.jpeg" alt="Gallery Image 56">
+            <img src="./image/im58.jpeg" alt="Gallery Image 58">
+            <img src="./image/im59.jpeg" alt="Gallery Image 59">
+            <img src="./image/im60.jpeg" alt="Gallery Image 60">
+            <img src="./image/im61.jpeg" alt="Gallery Image 61">
+            <img src="./image/im62.jpeg" alt="Gallery Image 62">
+            <img src="./image/im63.jpeg" alt="Gallery Image 63">
+            <img src="./image/im64.jpeg" alt="Gallery Image 64">
+            <img src="./image/im65.jpeg" alt="Gallery Image 65">
+            <img src="./image/im66.jpeg" alt="Gallery Image 66">
+            <img src="./image/im67.jpeg" alt="Gallery Image 67">
+            <img src="./image/im68.jpeg" alt="Gallery Image 68">
+            <img src="./image/im69.jpeg" alt="Gallery Image 69">
+            <img src="./image/im70.jpeg" alt="Gallery Image 70">
+            <img src="./image/im71.jpeg" alt="Gallery Image 71">
+            <img src="./image/im72.jpeg" alt="Gallery Image 72">
+            <img src="./image/im73.jpeg" alt="Gallery Image 73">
+            <img src="./image/im74.jpeg" alt="Gallery Image 74">
+            <img src="./image/im75.jpeg" alt="Gallery Image 75">
+            <img src="./image/im76.jpeg" alt="Gallery Image 76">
+            <img src="./image/im77.jpeg" alt="Gallery Image 77">
+            <img src="./image/im78.jpeg" alt="Gallery Image 78">
+            <img src="./image/im79.jpeg" alt="Gallery Image 79">
+            <img src="./image/im80.jpeg" alt="Gallery Image 80">
+            <img src="./image/im81.jpeg" alt="Gallery Image 81">
+            <img src="./image/im82.jpeg" alt="Gallery Image 82">
+            <img src="./image/im83.jpeg" alt="Gallery Image 83">
+            <img src="./image/im84.jpeg" alt="Gallery Image 84">
+            <img src="./image/im85.jpeg" alt="Gallery Image 85">
+            <img src="./image/im86.jpeg" alt="Gallery Image 86">
+            <img src="./image/im87.jpeg" alt="Gallery Image 87">
+            <img src="./image/im88.jpeg" alt="Gallery Image 88">
+            <img src="./image/im89.jpeg" alt="Gallery Image 89">
+            <img src="./image/im90.jpeg" alt="Gallery Image 90">
+            <img src="./image/im91.jpeg" alt="Gallery Image 91">
+            <img src="./image/im92.jpeg" alt="Gallery Image 92">
+            <img src="./image/im93.jpeg" alt="Gallery Image 93">
+            <img src="./image/im94.jpeg" alt="Gallery Image 94">
+            <img src="./image/im95.jpeg" alt="Gallery Image 95">
+            <img src="./image/im96.jpeg" alt="Gallery Image 96">
+            <img src="./image/im97.jpeg" alt="Gallery Image 97">
+            <img src="./image/im98.jpeg" alt="Gallery Image 98">
+            <img src="./image/im100.jpeg" alt="Gallery Image 100">
+            <img src="./image/im101.jpeg" alt="Gallery Image 101">
+            <img src="./image/im102.jpeg" alt="Gallery Image 102">
+            <img src="./image/im103.jpeg" alt="Gallery Image 103">
+            <img src="./image/im104.jpeg" alt="Gallery Image 104">
+            <img src="./image/im105.jpeg" alt="Gallery Image 105">
+            <img src="./image/im106.jpeg" alt="Gallery Image 106">
           </div>
         </div>
     </section>
