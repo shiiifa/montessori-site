@@ -943,10 +943,18 @@ header li{
     visibility: hidden !important;
   }
 
+  /* Ensure stat icons are visible */
+  .stat-item .stat-icon,
+  .stat-item .stat-icon::before {
+    display: block !important;
+    visibility: visible !important;
+  }
+
   .stat-icon {
-    font-size: 32px;
+    font-size: 40px;
     color: #1E1A3E;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    display: block;
   }
 
   .stat-number {
