@@ -215,7 +215,7 @@ header li{
     display: flex !important;
     align-items: center;
     gap: 8px;
-    margin-left: auto;
+    margin-left: 6cm;
     padding-right: 10px;
     visibility: visible !important;
     opacity: 1 !important;
@@ -225,7 +225,7 @@ header li{
 
   .navbar-social a {
     color: #fff;
-    font-size: 20px;
+    font-size: 24px;
     text-decoration: none;
     transition: color 0.3s ease;
     padding: 8px;
@@ -246,6 +246,7 @@ header li{
     opacity: 1 !important;
     position: relative;
     z-index: 102;
+    font-size: 24px;
   }
   
   .navbar a {
@@ -395,7 +396,7 @@ header li{
   }
 
   .hero-logo{
-    max-width: 400px;
+    max-width: 300px;
     width: 100%;
     height: auto;
     display: block;
