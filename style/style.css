@@ -162,7 +162,7 @@ header li{
     -webkit-backdrop-filter: blur(0px);
     overflow: visible;
     position: absolute;
-    top: 5mm;
+    top: 0;
     left: 0;
     right: 0;
     width: 100%;
@@ -175,7 +175,7 @@ header li{
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     position: fixed;
-    top: 5mm;
+    top: 0;
   }
   
   .navbar .container {
@@ -183,8 +183,10 @@ header li{
     justify-content: space-between;
     align-items: center;
     gap: 20px;
+    padding-top: 5mm;
     padding-left: 20px;
     padding-right: 20px;
+    padding-bottom: 5mm;
     overflow: visible;
   }
 
@@ -1719,7 +1721,7 @@ body {
     /* Fix navbar positioning */
     .navbar {
       position: absolute;
-      top: 5mm;
+      top: 0;
       left: 0;
       right: 0;
       width: 100%;
@@ -1727,7 +1729,12 @@ body {
     
     .navbar.scrolled {
       position: fixed;
-      top: 5mm;
+      top: 0;
+    }
+    
+    .navbar .container {
+      padding-top: 5mm;
+      padding-bottom: 5mm;
     }
   }
 
@@ -1750,13 +1757,9 @@ body {
       display: none;
     }
     .navbar-social {
-      display: flex !important;
-      align-items: center;
-      gap: 8px;
-      margin-left: 0;
-      padding-right: 0;
-      order: 2;
-      flex: 0 0 auto;
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
     }
     .icon {
       display: flex !important;
@@ -1809,7 +1812,7 @@ body {
 
     .navbar.responsive {
         position: absolute;
-        top: 5mm;
+        top: 0;
         width: 100%;
         background-color: rgba(0, 0, 0, 0.9) !important;
         backdrop-filter: blur(10px);
@@ -1818,13 +1821,15 @@ body {
       
       .navbar.responsive.scrolled {
         position: fixed;
-        top: 5mm;
+        top: 0;
       }
       
       .navbar.responsive .container {
         flex-direction: column;
         align-items: stretch;
         width: 100%;
+        padding-top: 5mm;
+        padding-bottom: 5mm;
       }
 
       .navbar.responsive .navbar-links {
@@ -1872,6 +1877,7 @@ body {
       }
       
       .navbar.responsive.show-menu .navbar-social {
+        display: flex !important;
         opacity: 1 !important;
         visibility: visible !important;
         transform: scale(1);
@@ -2068,6 +2074,49 @@ body {
     
     .card {
         padding: 30px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    /* Footer mobile font size reductions */
+    footer {
+        padding: 30px 0;
+    }
+    
+    .footer-column h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+    
+    footer ul li {
+        margin-bottom: 8px;
+    }
+    
+    footer ul li a {
+        font-size: 13px;
+    }
+    
+    .footer-locate p,
+    .footer-column p {
+        font-size: 13px;
+    }
+    
+    .footer-bottom p {
+        font-size: 12px;
+    }
+    
+    .social-link {
+        font-size: 18px;
+        width: 32px;
+        height: 32px;
+    }
+    
+    .social-link i {
+        font-size: 18px;
+    }
+    
+    .footer-column.footer-logo img {
+        max-width: 120px !important;
     }
 }
 

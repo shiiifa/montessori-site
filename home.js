@@ -17,7 +17,7 @@ function myFunction() {
       // Wait for transition to complete before removing responsive
       setTimeout(function() {
         x.classList.remove('responsive');
-        // Change X back to hamburger
+        // Change X back to hamburger 
         if (icon) {
           icon.classList.remove('fa-times');
           icon.classList.add('fa-bars');
