@@ -1776,6 +1776,16 @@ body {
         flex-direction: column;
         width: 100%;
         order: 2;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        padding: 0;
+        transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+      }
+      
+      .navbar.responsive.show-menu .navbar-links {
+        max-height: 500px;
+        opacity: 1;
       }
       
       .navbar.responsive .icon {
@@ -1787,15 +1797,11 @@ body {
       }
 
       .navbar.responsive .navbar-social {
-        position: absolute;
-        right: 0;
-        top: 0;
-        z-index: 101;
-        order: 1;
-        display: flex;
-        padding: 16px;
-        gap: 15px;
-        border: none;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transform: scale(0);
+        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
+        pointer-events: none !important;
       }
       
       .navbar.responsive .navbar-links a {

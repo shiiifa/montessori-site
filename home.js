@@ -1,20 +1,28 @@
 function myFunction() {
     var x = document.getElementById("myNavbar");
     var icon = document.querySelector('.navbar .icon i');
-    if (x.className === "navbar") {
-      x.className += " responsive";
+    if (!x.classList.contains('responsive')) {
+      x.classList.add('responsive');
       // Change hamburger to X
       if (icon) {
         icon.classList.remove('fa-bars');
         icon.classList.add('fa-times');
       }
+      // Trigger animation after adding responsive class
+      setTimeout(function() {
+        x.classList.add('show-menu');
+      }, 10);
     } else {
-      x.className = "navbar";
-      // Change X back to hamburger
-      if (icon) {
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
-      }
+      x.classList.remove('show-menu');
+      // Wait for transition to complete before removing responsive
+      setTimeout(function() {
+        x.classList.remove('responsive');
+        // Change X back to hamburger
+        if (icon) {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+      }, 400);
     }
   }
 
