@@ -162,7 +162,7 @@ header li{
     -webkit-backdrop-filter: blur(0px);
     overflow: visible;
     position: absolute;
-    top: 0;
+    top: 5mm;
     left: 0;
     right: 0;
     width: 100%;
@@ -175,7 +175,7 @@ header li{
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     position: fixed;
-    top: 0;
+    top: 5mm;
   }
   
   .navbar .container {
@@ -1213,13 +1213,23 @@ footer {
 
 .footer-content {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
 }
 
 .footer-column {
-  flex-basis: 300px;
+  flex: 1;
+  min-width: 0;
   margin-bottom: 20px;
+}
+
+.footer-column.footer-logo {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .footer-locate {
@@ -1709,7 +1719,7 @@ body {
     /* Fix navbar positioning */
     .navbar {
       position: absolute;
-      top: 0;
+      top: 5mm;
       left: 0;
       right: 0;
       width: 100%;
@@ -1717,7 +1727,7 @@ body {
     
     .navbar.scrolled {
       position: fixed;
-      top: 0;
+      top: 5mm;
     }
   }
 
@@ -1728,6 +1738,10 @@ body {
     .navbar-logo {
       margin-left: -5px;
       padding-left: 5px;
+      display: flex;
+      align-items: center;
+      order: 1;
+      flex: 0 0 auto;
     }
     .navbar-links {
       display: none;
@@ -1736,25 +1750,66 @@ body {
       display: none;
     }
     .navbar-social {
-      display: flex;
+      display: flex !important;
       align-items: center;
       gap: 8px;
-      margin-left: auto;
-      padding-right: 10px;
+      margin-left: 0;
+      padding-right: 0;
+      order: 2;
+      flex: 0 0 auto;
     }
-    .navbar a.icon {
-      float: left;
-      display: block !important;
+    .icon {
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+      float: none !important;
       position: relative;
+      order: 3;
+      flex: 0 0 auto;
+      height: auto;
+    }
+    
+    .navbar a.icon {
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+      float: none !important;
+      position: relative;
+      order: 3;
+      flex: 0 0 auto;
+      height: auto;
     }
     
     .navbar .container {
+      display: flex;
       justify-content: space-between;
+      align-items: center;
       position: relative;
+      flex-wrap: nowrap;
+      gap: 0;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    
+    .navbar-social a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+      line-height: 1;
+    }
+    
+    .navbar-social a i,
+    .icon i {
+      display: block;
+      line-height: 1;
     }
 
     .navbar.responsive {
         position: absolute;
+        top: 5mm;
         width: 100%;
         background-color: rgba(0, 0, 0, 0.9) !important;
         backdrop-filter: blur(10px);
@@ -1763,6 +1818,7 @@ body {
       
       .navbar.responsive.scrolled {
         position: fixed;
+        top: 5mm;
       }
       
       .navbar.responsive .container {
@@ -1797,11 +1853,42 @@ body {
       }
 
       .navbar.responsive .navbar-social {
-        opacity: 0 !important;
-        visibility: hidden !important;
+        position: relative;
+        display: flex !important;
+        opacity: 0;
+        visibility: hidden;
         transform: scale(0);
-        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
-        pointer-events: none !important;
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 16px;
+        margin-top: 0;
+        margin-left: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        transition: opacity 0.4s ease-in-out 0.2s, visibility 0.4s ease-in-out 0.2s, transform 0.4s ease-in-out 0.2s;
+        pointer-events: none;
+        gap: 20px;
+      }
+      
+      .navbar.responsive.show-menu .navbar-social {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: scale(1);
+        pointer-events: auto !important;
+      }
+      
+      .navbar.responsive.show-menu .navbar-social a {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        color: #fff !important;
+        font-size: 24px;
+        padding: 8px;
+      }
+      
+      .navbar.responsive.show-menu .navbar-social a:hover {
+        color: #ddd !important;
       }
       
       .navbar.responsive .navbar-links a {
