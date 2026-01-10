@@ -1253,7 +1253,11 @@ footer {
 }
 
 .footer-locate {
-  text-align: left;
+  text-align: right;
+}
+
+.footer-locate .social-links {
+  justify-content: flex-end;
 }
 
 .footer-column h3 {
