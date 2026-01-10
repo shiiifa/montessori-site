@@ -188,6 +188,8 @@ header li{
     padding-right: 20px;
     padding-bottom: 5mm;
     overflow: visible;
+    position: relative;
+    min-height: 60px;
   }
 
   .navbar-logo {
@@ -214,26 +216,32 @@ header li{
   .navbar-social {
     display: flex !important;
     align-items: center;
-    gap: 8px;
-    margin-left: 6cm;
-    padding-right: 10px;
+    gap: 20px;
+    position: absolute;
+    left: 6cm;
     visibility: visible !important;
     opacity: 1 !important;
     z-index: 101;
-    position: relative;
+    flex: 0 0 auto;
+    white-space: nowrap;
   }
 
   .navbar-social a {
     color: #fff;
-    font-size: 24px;
+    font-size: 32px;
     text-decoration: none;
     transition: color 0.3s ease;
-    padding: 8px;
+    padding: 10px;
     display: flex !important;
+    align-items: center;
+    justify-content: center;
     visibility: visible !important;
     opacity: 1 !important;
     position: relative;
     z-index: 102;
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
   }
 
   .navbar-social a:hover {
@@ -241,12 +249,15 @@ header li{
   }
   
   .navbar-social i {
-    display: inline-block !important;
+    display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
     position: relative;
     z-index: 102;
-    font-size: 24px;
+    font-size: 32px !important;
+    line-height: 1;
+    width: 100%;
+    height: 100%;
   }
   
   .navbar a {
