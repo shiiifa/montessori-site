@@ -1002,13 +1002,17 @@ header li{
     visibility: hidden !important;
   }
 
-  /* Ensure stat icons are visible */
+  /* Ensure stat icons are visible - override all hiding rules */
   .stat-item .stat-icon,
   .stat-item .stat-icon::before,
-  .stat-item .stat-icon::after {
+  .stat-item .stat-icon::after,
+  .stat-item i.stat-icon,
+  .stat-item i.stat-icon::before,
+  .stat-item i.stat-icon::after {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
+    content: "" !important;
   }
   
   .stat-item i.stat-icon {
@@ -1017,17 +1021,22 @@ header li{
     opacity: 1 !important;
     font-family: "Font Awesome 5 Free" !important;
     font-weight: 900 !important;
+    position: relative !important;
+    z-index: 10 !important;
   }
 
   .stat-icon {
-    font-size: 60px;
-    color: #1E1A3E;
-    margin-bottom: 20px;
-    margin-top: 0;
-    display: block;
+    font-size: 70px !important;
+    color: #1E1A3E !important;
+    margin-bottom: 25px !important;
+    margin-top: 0 !important;
+    display: block !important;
     opacity: 1 !important;
     visibility: visible !important;
-    order: -1;
+    order: -1 !important;
+    line-height: 1 !important;
+    width: auto !important;
+    height: auto !important;
   }
 
   .stat-number {
@@ -1107,7 +1116,7 @@ header li{
   
   .stat-item {
     position: relative;
-    overflow: hidden;
+    overflow: visible;
   }
   
   .stat-item *::before,
@@ -1115,6 +1124,14 @@ header li{
     display: none !important;
     content: none !important;
     visibility: hidden !important;
+  }
+  
+  /* Explicitly show icons - override any hiding */
+  .stat-item .stat-icon,
+  .stat-item i.stat-icon {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
   
   .stat-number * {
@@ -1143,6 +1160,23 @@ header li{
     pointer-events: none !important;
     position: absolute !important;
     left: -9999px !important;
+  }
+  
+  /* EXCEPTION: Always show stat icons - override nuclear option */
+  .stat-item .stat-icon,
+  .stat-item i.stat-icon,
+  .stat-item .stat-icon *,
+  .stat-item i.stat-icon * {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    pointer-events: auto !important;
+    position: relative !important;
+    left: auto !important;
   }
 
   #stats .card {
