@@ -398,7 +398,7 @@ header li{
     background: linear-gradient(to right, rgba(30, 26, 62, 0.9) 0%, rgba(30, 26, 62, 0.7) 50%, rgba(30, 26, 62, 0.3) 70%, transparent 100%);
     height: 100%;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     position: relative;
     z-index: 1;
   }
@@ -420,19 +420,19 @@ header li{
     position: relative;
     z-index: 1;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     width: 100%;
     padding-bottom: 0;
   }
 
   .bac-flex{
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     flex-direction: column;
     height: auto;
     text-align: left;
     color: #fff;
-    padding: 0 60px 80px 60px;
+    padding: 0 60px;
     box-sizing: border-box;
     align-items: flex-start;
     gap: 15px;
@@ -1907,15 +1907,15 @@ body {
     .overlay {
       width: 100%;
       background: rgba(30, 26, 62, 0.85);
-      align-items: flex-end;
+      align-items: center;
     }
     
     .bac-sec-content .container {
-      align-items: flex-end;
+      align-items: center;
     }
     
     .bac-flex {
-      padding: 30px 30px 50px 30px;
+      padding: 30px 30px;
       text-align: left;
       align-items: flex-start;
     }
@@ -2210,15 +2210,15 @@ body {
     .overlay {
       width: 100%;
       background: rgba(30, 26, 62, 0.85);
-      align-items: flex-end;
+      align-items: center;
     }
     
     .bac-sec-content .container {
-      align-items: flex-end;
+      align-items: center;
     }
     
     .bac-flex {
-      padding: 20px 20px 40px 20px;
+      padding: 20px 20px;
       text-align: left;
       align-items: flex-start;
     }
