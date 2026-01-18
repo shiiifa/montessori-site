@@ -1001,6 +1001,20 @@ header li{
     content: none !important;
     visibility: hidden !important;
   }
+  
+  /* CRITICAL: Font Awesome icons use ::before - MUST show these */
+  .stat-item i.stat-icon::before,
+  .stat-item i.fas.stat-icon::before,
+  .stat-item i.fa.stat-icon::before,
+  .stat-item .fas.stat-icon::before,
+  .stat-item .fa.stat-icon::before {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    content: "" !important;
+    font-family: "Font Awesome 5 Free" !important;
+    font-weight: 900 !important;
+  }
 
   /* Ensure stat icons are visible - override all hiding rules */
   .stat-item .stat-icon,
@@ -1037,6 +1051,22 @@ header li{
     line-height: 1 !important;
     width: auto !important;
     height: auto !important;
+  }
+  
+  /* Force icons to display - target Font Awesome classes directly */
+  .stat-item i.fas.stat-icon,
+  .stat-item i.fa.stat-icon,
+  .stat-item .fas.stat-icon,
+  .stat-item .fa.stat-icon {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    font-size: 70px !important;
+    color: #1E1A3E !important;
+    margin-bottom: 25px !important;
+    width: auto !important;
+    height: auto !important;
+    line-height: 1 !important;
   }
 
   .stat-number {
@@ -1166,7 +1196,11 @@ header li{
   .stat-item .stat-icon,
   .stat-item i.stat-icon,
   .stat-item .stat-icon *,
-  .stat-item i.stat-icon * {
+  .stat-item i.stat-icon *,
+  .stat-item i.fas.stat-icon::before,
+  .stat-item i.fa.stat-icon::before,
+  .stat-item .fas.stat-icon::before,
+  .stat-item .fa.stat-icon::before {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
@@ -1177,6 +1211,18 @@ header li{
     pointer-events: auto !important;
     position: relative !important;
     left: auto !important;
+    content: "" !important;
+  }
+  
+  /* Font Awesome icons use ::before pseudo-element */
+  .stat-item i.fas::before,
+  .stat-item i.fa::before {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    font-family: "Font Awesome 5 Free" !important;
+    font-weight: 900 !important;
+    content: attr(data-icon) !important;
   }
 
   #stats .card {
