@@ -363,36 +363,16 @@ header li{
     width: 100%;
     position: relative;
     margin-top: 0;
-    animation: fadeInHero 1.5s ease-in-out;
-  }
-
-  @keyframes fadeInHero {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
   }
 
   .overlay{
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+    width: 65%;
+    background: linear-gradient(to right, rgba(30, 26, 62, 0.85), rgba(30, 26, 62, 0.7));
     height: 100%;
     display: flex;
     align-items: center;
-    animation: fadeInOverlay 2s ease-in-out;
-  }
-
-  @keyframes fadeInOverlay {
-    from {
-      opacity: 0;
-      background-color: rgba(0, 0, 0, 0);
-    }
-    to {
-      opacity: 1;
-      background-color: rgba(0, 0, 0, 0.6);
-    }
+    position: relative;
+    z-index: 1;
   }
 
   .bac-sec-content{
@@ -405,24 +385,15 @@ header li{
     position: absolute;
     top: 0;
     left: 0;
-    animation: fadeInBackground 2s ease-in-out;
-  }
-
-  @keyframes fadeInBackground {
-    from {
-      opacity: 0;
-      transform: scale(1.05);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1);
-    }
   }
 
   .bac-sec-content .container{
     height: 100%;
     position: relative;
     z-index: 1;
+    display: flex;
+    align-items: center;
+    width: 100%;
   }
 
   .bac-flex{
@@ -430,32 +401,21 @@ header li{
     justify-content: center;
     flex-direction: column;
     height: 100%;
-    text-align: center;
+    text-align: left;
     color: #fff;
-    padding: 10px 10px 0 10px;
+    padding: 40px 60px;
     box-sizing: border-box;
-    align-items: center;
+    align-items: flex-start;
     gap: 20px;
-    animation: fadeInContent 2.5s ease-in-out;
-  }
-
-  @keyframes fadeInContent {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    max-width: 600px;
   }
 
   .hero-logo-container{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
   }
 
   .hero-logo{
@@ -466,14 +426,16 @@ header li{
   }
 
   .bac-flex h1{
-    font-size: 36px;
+    font-size: 48px;
     font-weight: bold;
     padding-bottom: 20px;
+    line-height: 1.2;
   }
 
   .bac-flex p{
-    max-width: 700px;
-    line-height: 25px;
+    max-width: 600px;
+    line-height: 28px;
+    font-size: 18px;
   }
 
   .sub{
@@ -1759,6 +1721,21 @@ body {
 }
 
 @media screen and (max-width: 660px) {
+    .overlay {
+      width: 100%;
+      background: rgba(30, 26, 62, 0.85);
+    }
+    
+    .bac-flex {
+      padding: 30px 30px;
+      text-align: center;
+      align-items: center;
+    }
+    
+    .hero-logo-container {
+      justify-content: center;
+    }
+    
     .hero-logo{
       max-width: 250px;
     }
@@ -2039,6 +2016,21 @@ body {
       max-width: 200px !important;
     }
 
+    .overlay {
+      width: 100%;
+      background: rgba(30, 26, 62, 0.85);
+    }
+    
+    .bac-flex {
+      padding: 20px 20px;
+      text-align: center;
+      align-items: center;
+    }
+    
+    .hero-logo-container {
+      justify-content: center;
+    }
+    
     .bac-flex h1 {
       font-size: 24px !important;
       padding: 0 10px;
