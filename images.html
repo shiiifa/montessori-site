@@ -336,9 +336,9 @@
         
         // Show ash background with 50% transparency when scrolled past the hero section
         if (scrollPosition > heroHeight) {
-          navbar.style.backgroundColor = 'rgba(128, 128, 128, 0.5)';
-          navbar.style.backdropFilter = 'blur(5px)';
-          navbar.style.webkitBackdropFilter = 'blur(5px)';
+          navbar.style.backgroundColor = '#ffffff';
+          navbar.style.backdropFilter = 'none';
+          navbar.style.webkitBackdropFilter = 'none';
           navbar.classList.add('scrolled');
         } else {
           navbar.style.backgroundColor = 'rgba(0, 0, 0, 0)';
