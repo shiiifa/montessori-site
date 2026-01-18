@@ -460,7 +460,11 @@ header li{
     font-weight: bold;
     padding-bottom: 20px;
     line-height: 1.2;
-    white-space: nowrap;
+    white-space: normal;
+    word-wrap: break-word;
+    text-transform: uppercase;
+    width: 100%;
+    max-width: 600px;
   }
 
   .bac-flex p{
@@ -980,10 +984,11 @@ header li{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
     margin-top: 30px;
     width: 100%;
+    gap: 20px;
   }
 
   .stat-item {
@@ -993,6 +998,8 @@ header li{
     justify-content: flex-start;
     list-style: none;
     gap: 10px;
+    overflow: visible !important;
+    position: relative;
   }
   
   /* Ensure icons are always visible in stat items and appear first */
@@ -1067,6 +1074,8 @@ header li{
     line-height: 1 !important;
     width: auto !important;
     height: auto !important;
+    text-align: center !important;
+    overflow: visible !important;
   }
 
   .stat-number {
@@ -1077,12 +1086,15 @@ header li{
     line-height: 1;
     list-style: none;
     -webkit-appearance: none !important;
-    -moz-appearance: textfield !important;
+    -moz-appearance: none !important;
     appearance: none !important;
     user-select: none;
     display: inline-block;
-    overflow: hidden;
+    overflow: visible;
     position: relative;
+    border: none !important;
+    background: transparent !important;
+    outline: none !important;
   }
 
   /* COMPLETELY REMOVE ALL SPINNER ARROWS - NO EXCEPTIONS */
@@ -1121,9 +1133,10 @@ header li{
   .stat-item input[type="number"].stat-number,
   .stat-item .stat-number,
   .stat-item span.stat-number {
-    -moz-appearance: textfield !important;
+    -moz-appearance: none !important;
     -webkit-appearance: none !important;
     appearance: none !important;
+    overflow: visible !important;
   }
 
   .stat-item input[type="number"].stat-number::-webkit-outer-spin-button,
@@ -1203,10 +1216,16 @@ header li{
     content: none !important;
   }
 
-  /* NUCLEAR OPTION - Hide ANY potential spinner controls in stat items */
+  /* NUCLEAR OPTION - Hide ANY potential spinner controls and scrollbars in stat items */
   .stat-item *::-webkit-inner-spin-button,
   .stat-item *::-webkit-outer-spin-button,
-  .stat-item *::-webkit-clear-button {
+  .stat-item *::-webkit-clear-button,
+  .stat-item *::-webkit-scrollbar,
+  .stat-item *::-webkit-scrollbar-button,
+  .stat-item *::-webkit-scrollbar-track,
+  .stat-item *::-webkit-scrollbar-track-piece,
+  .stat-item *::-webkit-scrollbar-thumb,
+  .stat-item *::-webkit-resizer {
     display: none !important;
     opacity: 0 !important;
     visibility: hidden !important;
@@ -1217,6 +1236,7 @@ header li{
     pointer-events: none !important;
     position: absolute !important;
     left: -9999px !important;
+    -webkit-appearance: none !important;
   }
   
   /* EXCEPTION: Always show stat icons - override nuclear option - DO NOT override content */
@@ -1272,7 +1292,13 @@ header li{
   /* ABSOLUTE GUARANTEE - No spinner arrows anywhere in stats section */
   #stats *::-webkit-inner-spin-button,
   #stats *::-webkit-outer-spin-button,
-  #stats *::-webkit-clear-button {
+  #stats *::-webkit-clear-button,
+  #stats *::-webkit-scrollbar,
+  #stats *::-webkit-scrollbar-button,
+  #stats *::-webkit-scrollbar-track,
+  #stats *::-webkit-scrollbar-track-piece,
+  #stats *::-webkit-scrollbar-thumb,
+  #stats *::-webkit-resizer {
     display: none !important;
     opacity: 0 !important;
     visibility: hidden !important;
@@ -1284,6 +1310,17 @@ header li{
     position: absolute !important;
     left: -9999px !important;
     -webkit-appearance: none !important;
+  }
+  
+  /* Ensure stat items don't show any scrollbars or spinners */
+  .stat-item {
+    overflow: visible !important;
+  }
+  
+  .stat-item * {
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
   }
 
   /*staff*/
@@ -1886,6 +1923,9 @@ body {
 
     .bac-flex h1{
         font-size: 28px;
+        white-space: normal;
+        word-wrap: break-word;
+        text-transform: uppercase;
     }
 
     .bac-flex p{
@@ -2183,7 +2223,9 @@ body {
     .bac-flex h1 {
       font-size: 24px !important;
       padding: 0 10px;
-      white-space: nowrap;
+      white-space: normal !important;
+      word-wrap: break-word;
+      text-transform: uppercase;
     }
     
     .bac-flex .sub p {
