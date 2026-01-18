@@ -374,7 +374,7 @@ header li{
   }
 
   .bac-sec-content{
-    background-image: url(../image/im30.jpeg);
+    background-image: url(../image/im91.jpeg);
     background-position:  center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -965,16 +965,28 @@ header li{
 
   /* Ensure stat icons are visible */
   .stat-item .stat-icon,
-  .stat-item .stat-icon::before {
+  .stat-item .stat-icon::before,
+  .stat-item .stat-icon::after {
     display: block !important;
     visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .stat-item i.stat-icon {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    font-family: "Font Awesome 5 Free" !important;
+    font-weight: 900 !important;
   }
 
   .stat-icon {
-    font-size: 40px;
+    font-size: 50px;
     color: #1E1A3E;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     display: block;
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 
   .stat-number {
