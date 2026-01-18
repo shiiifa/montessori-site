@@ -475,8 +475,15 @@ header li{
 
   .sub{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     margin-bottom: 30px;
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .sub p{
+    text-align: left;
+    margin: 0;
   }
   .buttons{
     display: flex;
