@@ -1021,7 +1021,7 @@ header li{
     z-index: 100 !important;
   }
   
-  /* CRITICAL: Font Awesome uses ::before - MUST show it */
+  /* CRITICAL: Font Awesome uses ::before - MUST show it with DARK color */
   .stat-item i.stat-icon::before,
   .stat-item i.fas.stat-icon::before,
   .stat-item i.fa.stat-icon::before {
@@ -1031,6 +1031,7 @@ header li{
     font-family: "Font Awesome 5 Free" !important;
     font-weight: 900 !important;
     content: "" !important;
+    color: #1E1A3E !important;
   }
 
   .stat-icon {
@@ -2341,21 +2342,40 @@ body {
   z-index: 9999 !important;
 }
 
-/* Font Awesome ::before pseudo-elements - MUST be visible */
+/* Font Awesome ::before pseudo-elements - MUST be visible with DARK color */
 .stat-item i.stat-icon::before,
 .stat-item i.fas.stat-icon::before,
 .stat-item i.fa.stat-icon::before,
 #stats .stat-item i.stat-icon::before,
 #stats .stat-item i.fas.stat-icon::before,
-#stats .stat-item i.fa.stat-icon::before {
+#stats .stat-item i.fa.stat-icon::before,
+.stat-item i.fas::before,
+.stat-item i.fa::before {
   display: inline-block !important;
   visibility: visible !important;
   opacity: 1 !important;
   font-family: "Font Awesome 5 Free" !important;
   font-weight: 900 !important;
   content: "" !important;
+  color: #1E1A3E !important;
   width: auto !important;
   height: auto !important;
   position: relative !important;
   left: auto !important;
+}
+
+/* Force dark color on all stat icons - override any white color */
+.stat-item i.stat-icon,
+.stat-item i.fas.stat-icon,
+.stat-item i.fa.stat-icon,
+#stats .stat-item i.stat-icon,
+#stats .stat-item i.fas.stat-icon,
+#stats .stat-item i.fa.stat-icon {
+  color: #1E1A3E !important;
+}
+
+.stat-item i.stat-icon *,
+.stat-item i.fas.stat-icon *,
+.stat-item i.fa.stat-icon * {
+  color: #1E1A3E !important;
 }
