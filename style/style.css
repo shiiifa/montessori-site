@@ -995,48 +995,42 @@ header li{
     gap: 10px;
   }
 
-  .stat-item *::before,
-  .stat-item *::after {
+  /* Hide ::before and ::after for everything EXCEPT icons */
+  .stat-item *::before:not(.stat-icon::before):not(i.stat-icon::before),
+  .stat-item *::after:not(.stat-icon::after):not(i.stat-icon::after) {
     display: none !important;
     content: none !important;
     visibility: hidden !important;
   }
   
-  /* CRITICAL: Font Awesome icons use ::before - MUST show these */
-  .stat-item i.stat-icon::before,
-  .stat-item i.fas.stat-icon::before,
-  .stat-item i.fa.stat-icon::before,
-  .stat-item .fas.stat-icon::before,
-  .stat-item .fa.stat-icon::before {
+  /* PRIORITY: Show stat icons and their ::before pseudo-elements */
+  .stat-item i.stat-icon,
+  .stat-item i.fas.stat-icon,
+  .stat-item i.fa.stat-icon {
     display: inline-block !important;
     visibility: visible !important;
     opacity: 1 !important;
-    content: "" !important;
-    font-family: "Font Awesome 5 Free" !important;
-    font-weight: 900 !important;
-  }
-
-  /* Ensure stat icons are visible - override all hiding rules */
-  .stat-item .stat-icon,
-  .stat-item .stat-icon::before,
-  .stat-item .stat-icon::after,
-  .stat-item i.stat-icon,
-  .stat-item i.stat-icon::before,
-  .stat-item i.stat-icon::after {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    content: "" !important;
+    font-size: 70px !important;
+    color: #1E1A3E !important;
+    margin-bottom: 25px !important;
+    margin-top: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    line-height: 1 !important;
+    position: relative !important;
+    z-index: 100 !important;
   }
   
-  .stat-item i.stat-icon {
-    display: block !important;
+  /* CRITICAL: Font Awesome uses ::before - MUST show it */
+  .stat-item i.stat-icon::before,
+  .stat-item i.fas.stat-icon::before,
+  .stat-item i.fa.stat-icon::before {
+    display: inline-block !important;
     visibility: visible !important;
     opacity: 1 !important;
     font-family: "Font Awesome 5 Free" !important;
     font-weight: 900 !important;
-    position: relative !important;
-    z-index: 10 !important;
+    content: "" !important;
   }
 
   .stat-icon {
@@ -1044,29 +1038,13 @@ header li{
     color: #1E1A3E !important;
     margin-bottom: 25px !important;
     margin-top: 0 !important;
-    display: block !important;
+    display: inline-block !important;
     opacity: 1 !important;
     visibility: visible !important;
     order: -1 !important;
     line-height: 1 !important;
     width: auto !important;
     height: auto !important;
-  }
-  
-  /* Force icons to display - target Font Awesome classes directly */
-  .stat-item i.fas.stat-icon,
-  .stat-item i.fa.stat-icon,
-  .stat-item .fas.stat-icon,
-  .stat-item .fa.stat-icon {
-    display: inline-block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    font-size: 70px !important;
-    color: #1E1A3E !important;
-    margin-bottom: 25px !important;
-    width: auto !important;
-    height: auto !important;
-    line-height: 1 !important;
   }
 
   .stat-number {
@@ -1149,19 +1127,35 @@ header li{
     overflow: visible;
   }
   
-  .stat-item *::before,
-  .stat-item *::after {
+  /* Hide ::before and ::after EXCEPT for icons */
+  .stat-item *:not(.stat-icon):not(i.stat-icon)::before,
+  .stat-item *:not(.stat-icon):not(i.stat-icon)::after {
     display: none !important;
     content: none !important;
     visibility: hidden !important;
   }
   
-  /* Explicitly show icons - override any hiding */
+  /* EXPLICITLY show icons - highest priority */
   .stat-item .stat-icon,
-  .stat-item i.stat-icon {
-    display: block !important;
+  .stat-item i.stat-icon,
+  .stat-item i.fas.stat-icon,
+  .stat-item i.fa.stat-icon {
+    display: inline-block !important;
     visibility: visible !important;
     opacity: 1 !important;
+    font-size: 70px !important;
+    color: #1E1A3E !important;
+  }
+  
+  /* Show icon ::before pseudo-elements (Font Awesome requirement) */
+  .stat-item i.stat-icon::before,
+  .stat-item i.fas.stat-icon::before,
+  .stat-item i.fa.stat-icon::before {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    font-family: "Font Awesome 5 Free" !important;
+    font-weight: 900 !important;
   }
   
   .stat-number * {
@@ -2323,4 +2317,45 @@ body {
     .counter {
         font-size: 15px;
     }
+}
+
+/* ============================================
+   FINAL OVERRIDE: STAT ICONS MUST BE VISIBLE
+   ============================================ */
+.stat-item i.stat-icon,
+.stat-item i.fas.stat-icon,
+.stat-item i.fa.stat-icon,
+#stats .stat-item i.stat-icon,
+#stats .stat-item i.fas.stat-icon,
+#stats .stat-item i.fa.stat-icon {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  font-size: 70px !important;
+  color: #1E1A3E !important;
+  margin-bottom: 25px !important;
+  width: auto !important;
+  height: auto !important;
+  line-height: 1 !important;
+  position: relative !important;
+  z-index: 9999 !important;
+}
+
+/* Font Awesome ::before pseudo-elements - MUST be visible */
+.stat-item i.stat-icon::before,
+.stat-item i.fas.stat-icon::before,
+.stat-item i.fa.stat-icon::before,
+#stats .stat-item i.stat-icon::before,
+#stats .stat-item i.fas.stat-icon::before,
+#stats .stat-item i.fa.stat-icon::before {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  font-family: "Font Awesome 5 Free" !important;
+  font-weight: 900 !important;
+  content: "" !important;
+  width: auto !important;
+  height: auto !important;
+  position: relative !important;
+  left: auto !important;
 }
