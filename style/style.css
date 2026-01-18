@@ -994,6 +994,15 @@ header li{
     list-style: none;
     gap: 10px;
   }
+  
+  /* Ensure icons are always visible in stat items */
+  .stat-item i,
+  .stat-item .fas,
+  .stat-item .fa {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
 
   /* Hide ::before and ::after for everything EXCEPT icons */
   .stat-item *::before:not(.stat-icon::before):not(i.stat-icon::before),
@@ -1001,6 +1010,17 @@ header li{
     display: none !important;
     content: none !important;
     visibility: hidden !important;
+  }
+  
+  /* Explicitly show Font Awesome icon pseudo-elements */
+  .stat-item i::before,
+  .stat-item .fas::before,
+  .stat-item .fa::before,
+  .stat-item i.fas::before,
+  .stat-item i.fa::before {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
   
   /* PRIORITY: Show stat icons and their ::before pseudo-elements */
@@ -1129,11 +1149,21 @@ header li{
   }
   
   /* Hide ::before and ::after EXCEPT for icons */
-  .stat-item *:not(.stat-icon):not(i.stat-icon)::before,
-  .stat-item *:not(.stat-icon):not(i.stat-icon)::after {
+  .stat-item *:not(.stat-icon):not(i.stat-icon):not(i):not(.fas):not(.fa)::before,
+  .stat-item *:not(.stat-icon):not(i.stat-icon):not(i):not(.fas):not(.fa)::after {
     display: none !important;
     content: none !important;
     visibility: hidden !important;
+  }
+  
+  /* Ensure icon elements and their pseudo-elements are visible */
+  .stat-item i::before,
+  .stat-item i::after,
+  .stat-item .fas::before,
+  .stat-item .fa::before {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
   
   /* EXPLICITLY show icons - highest priority */
@@ -2328,7 +2358,9 @@ body {
 .stat-item i.fa.stat-icon,
 #stats .stat-item i.stat-icon,
 #stats .stat-item i.fas.stat-icon,
-#stats .stat-item i.fa.stat-icon {
+#stats .stat-item i.fa.stat-icon,
+.stat-item .fas,
+.stat-item .fa {
   display: inline-block !important;
   visibility: visible !important;
   opacity: 1 !important;
@@ -2340,6 +2372,8 @@ body {
   line-height: 1 !important;
   position: relative !important;
   z-index: 9999 !important;
+  font-family: "Font Awesome 5 Free" !important;
+  font-weight: 900 !important;
 }
 
 /* Font Awesome ::before pseudo-elements - MUST be visible with DARK color */
@@ -2350,13 +2384,14 @@ body {
 #stats .stat-item i.fas.stat-icon::before,
 #stats .stat-item i.fa.stat-icon::before,
 .stat-item i.fas::before,
-.stat-item i.fa::before {
+.stat-item i.fa::before,
+.stat-item .fas::before,
+.stat-item .fa::before {
   display: inline-block !important;
   visibility: visible !important;
   opacity: 1 !important;
   font-family: "Font Awesome 5 Free" !important;
   font-weight: 900 !important;
-  content: "" !important;
   color: #1E1A3E !important;
   width: auto !important;
   height: auto !important;
@@ -2370,12 +2405,44 @@ body {
 .stat-item i.fa.stat-icon,
 #stats .stat-item i.stat-icon,
 #stats .stat-item i.fas.stat-icon,
-#stats .stat-item i.fa.stat-icon {
+#stats .stat-item i.fa.stat-icon,
+.stat-item .fas,
+.stat-item .fa {
   color: #1E1A3E !important;
 }
 
 .stat-item i.stat-icon *,
 .stat-item i.fas.stat-icon *,
 .stat-item i.fa.stat-icon * {
+  color: #1E1A3E !important;
+}
+
+/* Additional guarantee for icon visibility - highest priority */
+#stats .stat-item i,
+#stats .stat-item .fas,
+#stats .stat-item .fa,
+#stats .stat-item [class*="fa-"] {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  font-size: 70px !important;
+  color: #1E1A3E !important;
+  margin-bottom: 25px !important;
+  font-family: "Font Awesome 5 Free", "Font Awesome 5 Pro", "FontAwesome" !important;
+  font-weight: 900 !important;
+  font-style: normal !important;
+  text-rendering: auto !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+#stats .stat-item i::before,
+#stats .stat-item .fas::before,
+#stats .stat-item .fa::before,
+#stats .stat-item [class*="fa-"]::before {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  font-family: "Font Awesome 5 Free", "Font Awesome 5 Pro", "FontAwesome" !important;
+  font-weight: 900 !important;
   color: #1E1A3E !important;
 }
