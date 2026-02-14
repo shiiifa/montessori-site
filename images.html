@@ -89,6 +89,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 50px 20px;
+            min-height: 500px;
         }
         
         .gallery img {
@@ -106,6 +107,48 @@
         .gallery img:hover {
             transform: scale(1.05);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery img.hidden {
+            display: none;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+
+        .pagination button {
+            background-color: #3c3381;
+            color: #fff;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            min-width: 45px;
+        }
+
+        .pagination button:hover:not(:disabled) {
+            background-color: rgb(23, 2, 55);
+            transform: translateY(-2px);
+        }
+
+        .pagination button.active {
+            background-color: rgb(23, 2, 55);
+            transform: scale(1.1);
+        }
+
+        .pagination button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+            opacity: 0.6;
         }
 
         .container4 {
@@ -147,6 +190,12 @@
             .gallery-view-btn {
                 padding: 12px 30px;
                 font-size: 16px;
+            }
+
+            .pagination button {
+                padding: 8px 14px;
+                font-size: 14px;
+                min-width: 40px;
             }
         }
         
@@ -201,87 +250,11 @@
     </section>
     <section id="gallery-section">
         <div class="container4">
-        <div class="gallery">
-            <img src="./image/im1.jpeg" alt="Gallery Image 1">
-            <img src="./image/im2.jpeg" alt="Gallery Image 2">
-            <img src="./image/im3.jpeg" alt="Gallery Image 3">
-            <img src="./image/im4.jpeg" alt="Gallery Image 4">
-            <img src="./image/im5.jpeg" alt="Gallery Image 5">
-            <img src="./image/im6.jpeg" alt="Gallery Image 6">
-            <img src="./image/im7.jpeg" alt="Gallery Image 7">
-            <img src="./image/im8.jpeg" alt="Gallery Image 8">
-            <img src="./image/im9.jpeg" alt="Gallery Image 9">
-            <img src="./image/im10.jpeg" alt="Gallery Image 10">
-            <img src="./image/im11.jpeg" alt="Gallery Image 11">
-            <img src="./image/im12.jpeg" alt="Gallery Image 12">
-            <img src="./image/im13.jpeg" alt="Gallery Image 13">
-            <img src="./image/im14.jpeg" alt="Gallery Image 14">
-            <img src="./image/im15.jpeg" alt="Gallery Image 15">
-            <img src="./image/im16.jpeg" alt="Gallery Image 16">
-            <img src="./image/im17.jpeg" alt="Gallery Image 17">
-            <img src="./image/im18.jpeg" alt="Gallery Image 18">
-            <img src="./image/im19.jpeg" alt="Gallery Image 19">
-            <img src="./image/im20.jpeg" alt="Gallery Image 20">
-            <img src="./image/im21.jpeg" alt="Gallery Image 21">
-            <img src="./image/im22.jpeg" alt="Gallery Image 22">
-            <img src="./image/im23.jpeg" alt="Gallery Image 23">
-            <img src="./image/im24.jpeg" alt="Gallery Image 24">
-            <img src="./image/im25.jpeg" alt="Gallery Image 25">
-            <img src="./image/im26.jpeg" alt="Gallery Image 26">
-            <img src="./image/im27.jpeg" alt="Gallery Image 27">
-            <img src="./image/im28.jpeg" alt="Gallery Image 28">
-            <img src="./image/im29.jpeg" alt="Gallery Image 29">
-            <img src="./image/im30.jpeg" alt="Gallery Image 30">
-            <img src="./image/im32.jpeg" alt="Gallery Image 32">
-            <img src="./image/im56.jpeg" alt="Gallery Image 56">
-            <img src="./image/im58.jpeg" alt="Gallery Image 58">
-            <img src="./image/im59.jpeg" alt="Gallery Image 59">
-            <img src="./image/im60.jpeg" alt="Gallery Image 60">
-            <img src="./image/im61.jpeg" alt="Gallery Image 61">
-            <img src="./image/im62.jpeg" alt="Gallery Image 62">
-            <img src="./image/im63.jpeg" alt="Gallery Image 63">
-            <img src="./image/im64.jpeg" alt="Gallery Image 64">
-            <img src="./image/im65.jpeg" alt="Gallery Image 65">
-            <img src="./image/im66.jpeg" alt="Gallery Image 66">
-            <img src="./image/im67.jpeg" alt="Gallery Image 67">
-            <img src="./image/im68.jpeg" alt="Gallery Image 68">
-            <img src="./image/im69.jpeg" alt="Gallery Image 69">
-            <img src="./image/im70.jpeg" alt="Gallery Image 70">
-            <img src="./image/im71.jpeg" alt="Gallery Image 71">
-            <img src="./image/im72.jpeg" alt="Gallery Image 72">
-            <img src="./image/im73.jpeg" alt="Gallery Image 73">
-            <img src="./image/im74.jpeg" alt="Gallery Image 74">
-            <img src="./image/im75.jpeg" alt="Gallery Image 75">
-            <img src="./image/im76.jpeg" alt="Gallery Image 76">
-            <img src="./image/im77.jpeg" alt="Gallery Image 77">
-            <img src="./image/im78.jpeg" alt="Gallery Image 78">
-            <img src="./image/im79.jpeg" alt="Gallery Image 79">
-            <img src="./image/im80.jpeg" alt="Gallery Image 80">
-            <img src="./image/im81.jpeg" alt="Gallery Image 81">
-            <img src="./image/im82.jpeg" alt="Gallery Image 82">
-            <img src="./image/im83.jpeg" alt="Gallery Image 83">
-            <img src="./image/im84.jpeg" alt="Gallery Image 84">
-            <img src="./image/im85.jpeg" alt="Gallery Image 85">
-            <img src="./image/im86.jpeg" alt="Gallery Image 86">
-            <img src="./image/im87.jpeg" alt="Gallery Image 87">
-            <img src="./image/im88.jpeg" alt="Gallery Image 88">
-            <img src="./image/im89.jpeg" alt="Gallery Image 89">
-            <img src="./image/im90.jpeg" alt="Gallery Image 90">
-            <img src="./image/im91.jpeg" alt="Gallery Image 91">
-            <img src="./image/im92.jpeg" alt="Gallery Image 92">
-            <img src="./image/im93.jpeg" alt="Gallery Image 93">
-            <img src="./image/im94.jpeg" alt="Gallery Image 94">
-            <img src="./image/im95.jpeg" alt="Gallery Image 95">
-            <img src="./image/im96.jpeg" alt="Gallery Image 96">
-            <img src="./image/im97.jpeg" alt="Gallery Image 97">
-            <img src="./image/im98.jpeg" alt="Gallery Image 98">
-            <img src="./image/im100.jpeg" alt="Gallery Image 100">
-            <img src="./image/im101.jpeg" alt="Gallery Image 101">
-            <img src="./image/im102.jpeg" alt="Gallery Image 102">
-            <img src="./image/im103.jpeg" alt="Gallery Image 103">
-            <img src="./image/im104.jpeg" alt="Gallery Image 104">
-            <img src="./image/im105.jpeg" alt="Gallery Image 105">
-            <img src="./image/im106.jpeg" alt="Gallery Image 106">
+        <div class="gallery" id="gallery-container">
+            <!-- Images will be dynamically loaded here -->
+          </div>
+          <div class="pagination" id="pagination-container">
+            <!-- Pagination buttons will be dynamically generated here -->
           </div>
         </div>
     </section>
@@ -356,6 +329,216 @@
           gallerySection.scrollIntoView({ behavior: 'smooth' });
         }
       });
+
+      // Gallery pagination functionality
+      (function() {
+        const imagesPerPage = 18;
+        let currentPage = 1;
+        
+        // All image paths - existing images + exhibit folders
+        const allImages = [
+          // Existing images
+          './image/im1.jpeg', './image/im2.jpeg', './image/im3.jpeg', './image/im4.jpeg',
+          './image/im5.jpeg', './image/im6.jpeg', './image/im7.jpeg', './image/im8.jpeg',
+          './image/im9.jpeg', './image/im10.jpeg', './image/im11.jpeg', './image/im12.jpeg',
+          './image/im13.jpeg', './image/im14.jpeg', './image/im15.jpeg', './image/im16.jpeg',
+          './image/im17.jpeg', './image/im18.jpeg', './image/im19.jpeg', './image/im20.jpeg',
+          './image/im21.jpeg', './image/im22.jpeg', './image/im23.jpeg', './image/im24.jpeg',
+          './image/im25.jpeg', './image/im26.jpeg', './image/im27.jpeg', './image/im28.jpeg',
+          './image/im29.jpeg', './image/im30.jpeg', './image/im32.jpeg', './image/im56.jpeg',
+          './image/im58.jpeg', './image/im59.jpeg', './image/im60.jpeg', './image/im61.jpeg',
+          './image/im62.jpeg', './image/im63.jpeg', './image/im64.jpeg', './image/im65.jpeg',
+          './image/im66.jpeg', './image/im67.jpeg', './image/im68.jpeg', './image/im69.jpeg',
+          './image/im70.jpeg', './image/im71.jpeg', './image/im72.jpeg', './image/im73.jpeg',
+          './image/im74.jpeg', './image/im75.jpeg', './image/im76.jpeg', './image/im77.jpeg',
+          './image/im78.jpeg', './image/im79.jpeg', './image/im80.jpeg', './image/im81.jpeg',
+          './image/im82.jpeg', './image/im83.jpeg', './image/im84.jpeg', './image/im85.jpeg',
+          './image/im86.jpeg', './image/im87.jpeg', './image/im88.jpeg', './image/im89.jpeg',
+          './image/im90.jpeg', './image/im91.jpeg', './image/im92.jpeg', './image/im93.jpeg',
+          './image/im94.jpeg', './image/im95.jpeg', './image/im96.jpeg', './image/im97.jpeg',
+          './image/im98.jpeg', './image/im100.jpeg', './image/im101.jpeg', './image/im102.jpeg',
+          './image/im103.jpeg', './image/im104.jpeg', './image/im105.jpeg', './image/im106.jpeg',
+          // Exhibit 1 images
+          './image/exhibit1/AU 1.jpg', './image/exhibit1/AU 2.jpg', './image/exhibit1/AU 3.jpg',
+          './image/exhibit1/AU 4.jpg', './image/exhibit1/AU 5.jpg', './image/exhibit1/AU 6.jpg',
+          './image/exhibit1/AU 7.jpg', './image/exhibit1/AU 8.jpg', './image/exhibit1/AU 9.jpg',
+          './image/exhibit1/AU 10.jpg', './image/exhibit1/AU 11.jpg', './image/exhibit1/AU 12.jpg',
+          './image/exhibit1/AU 13.jpg', './image/exhibit1/AU 14.jpg', './image/exhibit1/AU 15.jpg',
+          './image/exhibit1/AU 16.jpg', './image/exhibit1/AU 17.jpg', './image/exhibit1/AU 18.jpg',
+          './image/exhibit1/AU 19.jpg', './image/exhibit1/AU 20.jpg', './image/exhibit1/AU 21.jpg',
+          './image/exhibit1/AU 22.jpg', './image/exhibit1/AU 23.jpg', './image/exhibit1/AU 24.jpg',
+          './image/exhibit1/AU 25.jpg', './image/exhibit1/AU 26.jpg', './image/exhibit1/AU 27.jpg',
+          './image/exhibit1/AU 28.jpg', './image/exhibit1/AU 29.jpg', './image/exhibit1/SM 30.jpg',
+          // Exhibit 2 images (HEIC files)
+          './image/exhibit2/2025_02_24_00_11_IMG_0872.HEIC', './image/exhibit2/2025_10_20_08_13_IMG_3916.HEIC',
+          './image/exhibit2/2025_10_21_01_00_IMG_3921.HEIC', './image/exhibit2/2025_10_24_07_22_IMG_3953.HEIC',
+          './image/exhibit2/2025_10_24_07_23_IMG_3954.HEIC', './image/exhibit2/2025_10_24_07_23_IMG_3956.HEIC',
+          './image/exhibit2/2025_10_24_07_23_IMG_3957.HEIC', './image/exhibit2/2025_10_24_07_25_IMG_3960.HEIC',
+          './image/exhibit2/2025_10_24_07_25_IMG_3961.HEIC', './image/exhibit2/2025_10_24_07_25_IMG_3962.HEIC',
+          './image/exhibit2/2025_10_24_07_25_IMG_3963.HEIC', './image/exhibit2/2025_10_24_07_25_IMG_3965.HEIC',
+          './image/exhibit2/2025_10_24_07_26_IMG_3966.HEIC', './image/exhibit2/2025_10_24_08_26_IMG_3981.HEIC',
+          './image/exhibit2/2025_10_24_08_26_IMG_3982.HEIC', './image/exhibit2/2025_10_27_02_02_IMG_4089.HEIC',
+          './image/exhibit2/2025_10_27_02_02_IMG_4091.HEIC', './image/exhibit2/2025_10_27_02_04_IMG_4092.HEIC',
+          './image/exhibit2/2025_11_14_03_12_IMG_4182.HEIC', './image/exhibit2/2025_11_14_03_12_IMG_4184.HEIC',
+          './image/exhibit2/2025_11_14_03_12_IMG_4185.HEIC', './image/exhibit2/2025_11_14_03_13_IMG_4186.HEIC',
+          './image/exhibit2/2025_11_14_03_35_IMG_4192.HEIC', './image/exhibit2/2025_11_14_03_35_IMG_4195.HEIC',
+          './image/exhibit2/2025_11_14_03_35_IMG_4196.HEIC', './image/exhibit2/2025_11_14_03_38_IMG_4199.HEIC',
+          './image/exhibit2/2025_11_14_03_38_IMG_4200.HEIC', './image/exhibit2/2025_11_14_03_46_IMG_4208.HEIC',
+          './image/exhibit2/2025_11_14_03_52_IMG_4212.HEIC', './image/exhibit2/2025_11_14_03_56_IMG_4222.HEIC',
+          // Exhibit 3 images
+          './image/exhibit3/2025_11_19_06_18_IMG_7105.HEIC', './image/exhibit3/2025_11_19_06_18_IMG_7106.HEIC',
+          './image/exhibit3/2025_11_19_06_18_IMG_7107.HEIC', './image/exhibit3/2025_11_19_06_18_IMG_7108.HEIC',
+          './image/exhibit3/2025_11_21_05_07_IMG_8922.JPG', './image/exhibit3/2025_11_21_05_07_IMG_8924.JPG',
+          './image/exhibit3/424B0004.JPG', './image/exhibit3/424B0009.JPG', './image/exhibit3/424B0012.JPG',
+          './image/exhibit3/424B0024.JPG', './image/exhibit3/424B0040.JPG', './image/exhibit3/424B0067.JPG',
+          './image/exhibit3/424B0078.JPG', './image/exhibit3/424B0086.JPG', './image/exhibit3/424B0101.JPG',
+          './image/exhibit3/424B0110.JPG', './image/exhibit3/424B0118.JPG', './image/exhibit3/424B0133.JPG',
+          './image/exhibit3/424B0144.JPG', './image/exhibit3/424B0150.JPG', './image/exhibit3/424B0167.JPG',
+          './image/exhibit3/424B0169.JPG', './image/exhibit3/424B0180.JPG', './image/exhibit3/424B0188.JPG',
+          './image/exhibit3/424B0190.JPG', './image/exhibit3/424B0205.JPG', './image/exhibit3/424B0210.JPG',
+          './image/exhibit3/424B0238.JPG', './image/exhibit3/424B0272.JPG', './image/exhibit3/424B0283.JPG',
+          './image/exhibit3/424B0344.JPG', './image/exhibit3/424B0382.JPG', './image/exhibit3/424B0500.JPG',
+          './image/exhibit3/424B0501.JPG', './image/exhibit3/424B0568.JPG', './image/exhibit3/424B0591.JPG',
+          './image/exhibit3/424B9921.JPG', './image/exhibit3/424B9928.JPG', './image/exhibit3/424B9936.JPG',
+          './image/exhibit3/424B9946.JPG', './image/exhibit3/424B9955.JPG', './image/exhibit3/424B9962.JPG',
+          './image/exhibit3/424B9966.JPG', './image/exhibit3/424B9989.JPG', './image/exhibit3/424B9999.JPG',
+          './image/exhibit3/IMG_0074.JPG', './image/exhibit3/IMG_0075.JPG', './image/exhibit3/IMG_0076.JPG',
+          './image/exhibit3/IMG_0077.JPG', './image/exhibit3/IMG_0078.JPG', './image/exhibit3/IMG_0079.JPG',
+          './image/exhibit3/IMG_0100.JPG', './image/exhibit3/IMG_0101.JPG', './image/exhibit3/IMG_0102.JPG',
+          './image/exhibit3/IMG_0103.JPG', './image/exhibit3/IMG_0106.JPG'
+        ];
+
+        const galleryContainer = document.getElementById('gallery-container');
+        const paginationContainer = document.getElementById('pagination-container');
+        const totalPages = Math.ceil(allImages.length / imagesPerPage);
+
+        // Create image elements
+        function createImageElements() {
+          galleryContainer.innerHTML = '';
+          allImages.forEach((src, index) => {
+            const img = document.createElement('img');
+            img.src = src;
+            img.alt = `Gallery Image ${index + 1}`;
+            img.classList.add('hidden');
+            galleryContainer.appendChild(img);
+          });
+        }
+
+        // Show images for current page
+        function showPage(page) {
+          const startIndex = (page - 1) * imagesPerPage;
+          const endIndex = startIndex + imagesPerPage;
+          const images = galleryContainer.querySelectorAll('img');
+          
+          images.forEach((img, index) => {
+            if (index >= startIndex && index < endIndex) {
+              img.classList.remove('hidden');
+            } else {
+              img.classList.add('hidden');
+            }
+          });
+        }
+
+        // Create pagination buttons
+        function createPagination() {
+          paginationContainer.innerHTML = '';
+          
+          // Previous button
+          const prevBtn = document.createElement('button');
+          prevBtn.textContent = '←';
+          prevBtn.disabled = currentPage === 1;
+          prevBtn.addEventListener('click', () => {
+            if (currentPage > 1) {
+              currentPage--;
+              showPage(currentPage);
+              createPagination();
+              window.scrollTo({ top: galleryContainer.offsetTop - 100, behavior: 'smooth' });
+            }
+          });
+          paginationContainer.appendChild(prevBtn);
+
+          // Page number buttons
+          const maxVisiblePages = 7;
+          let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+          let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+          
+          if (endPage - startPage < maxVisiblePages - 1) {
+            startPage = Math.max(1, endPage - maxVisiblePages + 1);
+          }
+
+          if (startPage > 1) {
+            const firstBtn = document.createElement('button');
+            firstBtn.textContent = '1';
+            firstBtn.addEventListener('click', () => {
+              currentPage = 1;
+              showPage(currentPage);
+              createPagination();
+              window.scrollTo({ top: galleryContainer.offsetTop - 100, behavior: 'smooth' });
+            });
+            paginationContainer.appendChild(firstBtn);
+            
+            if (startPage > 2) {
+              const ellipsis = document.createElement('span');
+              ellipsis.textContent = '...';
+              ellipsis.style.padding = '0 5px';
+              paginationContainer.appendChild(ellipsis);
+            }
+          }
+
+          for (let i = startPage; i <= endPage; i++) {
+            const pageBtn = document.createElement('button');
+            pageBtn.textContent = i;
+            if (i === currentPage) {
+              pageBtn.classList.add('active');
+            }
+            pageBtn.addEventListener('click', () => {
+              currentPage = i;
+              showPage(currentPage);
+              createPagination();
+              window.scrollTo({ top: galleryContainer.offsetTop - 100, behavior: 'smooth' });
+            });
+            paginationContainer.appendChild(pageBtn);
+          }
+
+          if (endPage < totalPages) {
+            if (endPage < totalPages - 1) {
+              const ellipsis = document.createElement('span');
+              ellipsis.textContent = '...';
+              ellipsis.style.padding = '0 5px';
+              paginationContainer.appendChild(ellipsis);
+            }
+            
+            const lastBtn = document.createElement('button');
+            lastBtn.textContent = totalPages;
+            lastBtn.addEventListener('click', () => {
+              currentPage = totalPages;
+              showPage(currentPage);
+              createPagination();
+              window.scrollTo({ top: galleryContainer.offsetTop - 100, behavior: 'smooth' });
+            });
+            paginationContainer.appendChild(lastBtn);
+          }
+
+          // Next button
+          const nextBtn = document.createElement('button');
+          nextBtn.textContent = '→';
+          nextBtn.disabled = currentPage === totalPages;
+          nextBtn.addEventListener('click', () => {
+            if (currentPage < totalPages) {
+              currentPage++;
+              showPage(currentPage);
+              createPagination();
+              window.scrollTo({ top: galleryContainer.offsetTop - 100, behavior: 'smooth' });
+            }
+          });
+          paginationContainer.appendChild(nextBtn);
+        }
+
+        // Initialize gallery
+        createImageElements();
+        showPage(1);
+        createPagination();
+      })();
     </script>
 </body>
 </html>
