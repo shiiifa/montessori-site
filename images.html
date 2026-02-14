@@ -8,537 +8,196 @@
     <link rel="stylesheet" href="./style/style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a5717fc95e.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/heic2any/dist/heic2any.min.js"></script>
     <title>Gallery | Senators' Montessori School</title>
     <style>
-        #gallery-hero {
-            margin-bottom: 0;
-            height: 100vh;
-            width: 100%;
-            position: relative;
-            margin-top: 0;
+        #gallery-hero { margin-bottom:0;height:100vh;width:100%;position:relative;margin-top:0;}
+        .gallery-hero-content {background-image:url(./image/im99.jpeg);background-position:center center;background-size:cover;background-repeat:no-repeat;height:100%;width:100%;position:absolute;top:0;left:0;}
+        .gallery-hero-content .container {height:100%;position:relative;z-index:1;}
+        .gallery-hero-overlay {width:100%;background-color:rgba(0,0,0,0.6);height:100%;display:flex;align-items:center;}
+        .gallery-hero-flex {display:flex;justify-content:center;flex-direction:column;height:100%;text-align:center;color:#fff;padding:10px 10px 0 10px;box-sizing:border-box;align-items:center;gap:30px;}
+        .gallery-hero-flex h1 {font-size:48px;font-weight:bold;padding-bottom:20px;color:#fff;}
+        .gallery-view-btn {display:inline-block;color:#fff;background-color:#3c3381;padding:15px 40px;text-decoration:none;border-radius:5px;font-size:18px;font-weight:600;transition:all ease-in-out 0.5s;border:none;cursor:pointer;}
+        .gallery-view-btn:hover {background-color:rgb(23,2,55);transform:translateY(-2px);}
+        .gallery {column-count:3;column-gap:10px;max-width:1200px;margin:0 auto;padding:50px 20px;min-height:500px;}
+        .gallery img {width:100%;height:auto;display:block;margin-bottom:10px;break-inside:avoid;page-break-inside:avoid;animation:scale 0.3s ease-in-out;transition:transform 0.3s ease-in-out;border-radius:4px;}
+        .gallery img:hover {transform:scale(1.05);box-shadow:0 4px 8px rgba(0,0,0,0.2);}
+        .gallery img.hidden {display:none;}
+        .pagination {display:flex;justify-content:center;align-items:center;gap:10px;margin:40px 0;flex-wrap:wrap;}
+        .pagination button {background-color:#3c3381;color:#fff;border:none;padding:10px 18px;border-radius:5px;cursor:pointer;font-size:16px;font-weight:600;transition:all 0.3s ease;min-width:45px;}
+        .pagination button:hover:not(:disabled){background-color:rgb(23,2,55);transform:translateY(-2px);}
+        .pagination button.active{background-color:rgb(23,2,55);transform:scale(1.1);}
+        .pagination button:disabled{background-color:#ccc;cursor:not-allowed;opacity:0.6;}
+        .container4{max-width:95vw;margin:auto;}
+        #gallery-section{padding:80px 0;background-color:#fff;}
+        @keyframes scale{0%{transform:scale(0.9);opacity:0;}100%{transform:scale(1);opacity:1;}}
+        @media(max-width:900px){.gallery{column-count:2;}}
+        @media(max-width:600px){
+            .gallery{column-count:2;column-gap:8px;padding:50px 10px;}
+            .gallery img{margin-bottom:8px;}
+            .gallery-hero-flex h1{font-size:36px;}
+            .gallery-view-btn{padding:12px 30px;font-size:16px;}
+            .pagination button{padding:8px 14px;font-size:14px;min-width:40px;}
         }
-
-        .gallery-hero-content {
-            background-image: url(./image/im99.jpeg);
-            background-position: center center;
-            background-size: cover;
-            background-repeat: no-repeat;
-            height: 100%;
-            width: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-
-        .gallery-hero-content .container {
-            height: 100%;
-            position: relative;
-            z-index: 1;
-        }
-
-        .gallery-hero-overlay {
-            width: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            height: 100%;
-            display: flex;
-            align-items: center;
-        }
-
-        .gallery-hero-flex {
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            height: 100%;
-            text-align: center;
-            color: #fff;
-            padding: 10px 10px 0 10px;
-            box-sizing: border-box;
-            align-items: center;
-            gap: 30px;
-        }
-
-        .gallery-hero-flex h1 {
-            font-size: 48px;
-            font-weight: bold;
-            padding-bottom: 20px;
-            color: #fff;
-        }
-
-        .gallery-view-btn {
-            display: inline-block;
-            color: #fff;
-            background-color: #3c3381;
-            padding: 15px 40px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 18px;
-            font-weight: 600;
-            transition: all ease-in-out 0.5s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .gallery-view-btn:hover {
-            background-color: rgb(23, 2, 55);
-            transform: translateY(-2px);
-        }
-
-        .gallery {
-            column-count: 3;
-            column-gap: 10px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 50px 20px;
-            min-height: 500px;
-        }
-        
-        .gallery img {
-            width: 100%;
-            height: auto;
-            display: block;
-            margin-bottom: 10px;
-            break-inside: avoid;
-            page-break-inside: avoid;
-            animation: scale 0.3s ease-in-out;
-            transition: transform 0.3s ease-in-out;
-            border-radius: 4px;
-        }
-        
-        .gallery img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .gallery img.hidden {
-            display: none;
-        }
-
-        .pagination {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            margin: 40px 0;
-            flex-wrap: wrap;
-        }
-
-        .pagination button {
-            background-color: #3c3381;
-            color: #fff;
-            border: none;
-            padding: 10px 18px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            min-width: 45px;
-        }
-
-        .pagination button:hover:not(:disabled) {
-            background-color: rgb(23, 2, 55);
-            transform: translateY(-2px);
-        }
-
-        .pagination button.active {
-            background-color: rgb(23, 2, 55);
-            transform: scale(1.1);
-        }
-
-        .pagination button:disabled {
-            background-color: #ccc;
-            cursor: not-allowed;
-            opacity: 0.6;
-        }
-
-        .container4 {
-            max-width: 95vw;
-            margin: auto;
-        }
-
-        #gallery-section {
-            padding: 80px 0;
-            background-color: #fff;
-        }
-
-        @keyframes scale {
-            0% { transform: scale(0.9); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-        
-        @media (max-width: 900px) {
-            .gallery {
-                column-count: 2;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .gallery {
-                column-count: 2;
-                column-gap: 8px;
-                padding: 50px 10px;
-            }
-
-            .gallery img {
-                margin-bottom: 8px;
-            }
-
-            .gallery-hero-flex h1 {
-                font-size: 36px;
-            }
-
-            .gallery-view-btn {
-                padding: 12px 30px;
-                font-size: 16px;
-            }
-
-            .pagination button {
-                padding: 8px 14px;
-                font-size: 14px;
-                min-width: 40px;
-            }
-        }
-        
-        @media (max-width: 400px) {
-            .gallery {
-                column-count: 1;
-            }
-
-            .gallery-hero-flex h1 {
-                font-size: 28px;
-            }
+        @media(max-width:400px){
+            .gallery{column-count:1;}
+            .gallery-hero-flex h1{font-size:28px;}
         }
     </style>
 </head>
 <body>
-    <div class="navbar" id="myNavbar">
-        <div class="container">
-            <div class="navbar-logo">
-                <img src="./image/school_logo.png" alt="Senators Montessori School Logo" class="navbar-logo-img">
-            </div>
-            <div class="navbar-links">
-                <a href="./index.html">Home</a>
-                <a href="./index.html#about">About</a>
-                <a href="./index.html#stats">Achievements</a>
-                <a href="./images.html">Gallery</a>
-                <a href="./locate.html">Locate Us</a>
-            </div>
-            <div class="navbar-social">
-                <a href="https://www.instagram.com/senatorsmontessorischool/" target="_blank" title="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://web.facebook.com/people/Senators-Montessori-School/100068167177814/?_rdc=1&_rdr#" target="_blank" title="Facebook">
-                    <i class="fab fa-facebook"></i>
-                </a>
-            </div>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
-            </a>
-        </div>
-    </div>
-    <section id="gallery-hero">
-        <div class="gallery-hero-content">
-            <div class="gallery-hero-overlay">
-                <div class="container">
-                    <div class="gallery-hero-flex">
-                        <h1 data-aos="fade" data-aos-duration="2000">GALLERY</h1>
-                        <a href="#gallery-section" class="gallery-view-btn" data-aos="fade" data-aos-duration="2000" data-aos-delay="200">View</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="gallery-section">
-        <div class="container4">
-        <div class="gallery" id="gallery-container">
-            <!-- Images will be dynamically loaded here -->
-          </div>
-          <div class="pagination" id="pagination-container">
-            <!-- Pagination buttons will be dynamically generated here -->
-          </div>
-        </div>
-    </section>
-    <footer>
-      <div class="container2">
-        <div class="footer-content">
-          <div class="footer-column">
-            <h3>Quick Links</h3>
-            <ul>
-              <li><a href="./index.html">Home</a></li>
-              <li><a href="./index.html#about">About</a></li>
-              <li><a href="./images.html">Gallery</a></li>
-              <li><a href="./locate.html">Locate Us</a></li>
-            </ul>
-          </div>
-          <div class="footer-column footer-logo">
-            <img src="./image/school_logo.png" alt="Senators Montessori Logo" style="max-width: 150px; height: auto;">
-          </div>
-          <div class="footer-column footer-locate">
-            <h3>Locate Us</h3>
-            <p>8AA, TM3, 1 Otis Ln, Tema</p>
-            <p>Phone: +233 555 388 901</p>
-            <div class="social-links" style="margin-top: 15px;">
-              <a href="https://www.instagram.com/senatorsmontessorischool/" target="_blank" class="social-link">
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a href="https://web.facebook.com/people/Senators-Montessori-School/100068167177814/?_rdc=1&_rdr#" target="_blank" class="social-link">
-                <i class="fab fa-facebook"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="footer-bottom">
-          <p>&copy; 2026 Senators Montessori. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      AOS.init({
-        once: true
-      });
-    </script>
-    <script src="./home.js"></script>
-    <script>
-      // Navbar scroll effect - transparent initially, ash background when scrolled
-      window.addEventListener('scroll', function() {
-        const navbar = document.querySelector('.navbar');
-        const scrollPosition = window.scrollY;
-        const galleryHero = document.querySelector('#gallery-hero');
-        const heroHeight = galleryHero ? galleryHero.offsetHeight : 0;
-        
-        // Show ash background with 50% transparency when scrolled past the hero section
-        if (scrollPosition > heroHeight) {
-          navbar.style.backgroundColor = '#ffffff';
-          navbar.style.backdropFilter = 'none';
-          navbar.style.webkitBackdropFilter = 'none';
-          navbar.classList.add('scrolled');
-        } else {
-          navbar.style.backgroundColor = 'rgba(0, 0, 0, 0)';
-          navbar.style.backdropFilter = 'blur(0px)';
-          navbar.style.webkitBackdropFilter = 'blur(0px)';
-          navbar.classList.remove('scrolled');
-        }
-      });
 
-      // Smooth scroll for View Gallery button
-      document.querySelector('.gallery-view-btn').addEventListener('click', function(e) {
-        e.preventDefault();
-        const gallerySection = document.querySelector('#gallery-section');
-        if (gallerySection) {
-          gallerySection.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
+<div class="navbar" id="myNavbar">
+<div class="container">
+<div class="navbar-logo">
+<img src="./image/school_logo.png" alt="Senators Montessori School Logo" class="navbar-logo-img">
+</div>
+<div class="navbar-links">
+<a href="./index.html">Home</a>
+<a href="./index.html#about">About</a>
+<a href="./index.html#stats">Achievements</a>
+<a href="./images.html">Gallery</a>
+<a href="./locate.html">Locate Us</a>
+</div>
+<div class="navbar-social">
+<a href="https://www.instagram.com/senatorsmontessorischool/" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://web.facebook.com/people/Senators-Montessori-School/100068167177814/?_rdc=1&_rdr#" target="_blank"><i class="fab fa-facebook"></i></a>
+</div>
+<a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+</div>
+</div>
 
-      // Gallery pagination functionality
-      (function() {
-        const imagesPerPage = 18;
-        let currentPage = 1;
-        
-        // All image paths - existing images + exhibit folders
-        const allImages = [
-          // Existing images
-          './image/im1.jpeg', './image/im2.jpeg', './image/im3.jpeg', './image/im4.jpeg',
-          './image/im5.jpeg', './image/im6.jpeg', './image/im7.jpeg', './image/im8.jpeg',
-          './image/im9.jpeg', './image/im10.jpeg', './image/im11.jpeg', './image/im12.jpeg',
-          './image/im13.jpeg', './image/im14.jpeg', './image/im15.jpeg', './image/im16.jpeg',
-          './image/im17.jpeg', './image/im18.jpeg', './image/im19.jpeg', './image/im20.jpeg',
-          './image/im21.jpeg', './image/im22.jpeg', './image/im23.jpeg', './image/im24.jpeg',
-          './image/im25.jpeg', './image/im26.jpeg', './image/im27.jpeg', './image/im28.jpeg',
-          './image/im29.jpeg', './image/im30.jpeg', './image/im32.jpeg', './image/im56.jpeg',
-          './image/im58.jpeg', './image/im59.jpeg', './image/im60.jpeg', './image/im61.jpeg',
-          './image/im62.jpeg', './image/im63.jpeg', './image/im64.jpeg', './image/im65.jpeg',
-          './image/im66.jpeg', './image/im67.jpeg', './image/im68.jpeg', './image/im69.jpeg',
-          './image/im70.jpeg', './image/im71.jpeg', './image/im72.jpeg', './image/im73.jpeg',
-          './image/im74.jpeg', './image/im75.jpeg', './image/im76.jpeg', './image/im77.jpeg',
-          './image/im78.jpeg', './image/im79.jpeg', './image/im80.jpeg', './image/im81.jpeg',
-          './image/im82.jpeg', './image/im83.jpeg', './image/im84.jpeg', './image/im85.jpeg',
-          './image/im86.jpeg', './image/im87.jpeg', './image/im88.jpeg', './image/im89.jpeg',
-          './image/im90.jpeg', './image/im91.jpeg', './image/im92.jpeg', './image/im93.jpeg',
-          './image/im94.jpeg', './image/im95.jpeg', './image/im96.jpeg', './image/im97.jpeg',
-          './image/im98.jpeg', './image/im100.jpeg', './image/im101.jpeg', './image/im102.jpeg',
-          './image/im103.jpeg', './image/im104.jpeg', './image/im105.jpeg', './image/im106.jpeg',
-          // Exhibit 1 images
-          './image/exhibit1/AU 1.jpg', './image/exhibit1/AU 2.jpg', './image/exhibit1/AU 3.jpg',
-          './image/exhibit1/AU 4.jpg', './image/exhibit1/AU 5.jpg', './image/exhibit1/AU 6.jpg',
-          './image/exhibit1/AU 7.jpg', './image/exhibit1/AU 8.jpg', './image/exhibit1/AU 9.jpg',
-          './image/exhibit1/AU 10.jpg', './image/exhibit1/AU 11.jpg', './image/exhibit1/AU 12.jpg',
-          './image/exhibit1/AU 13.jpg', './image/exhibit1/AU 14.jpg', './image/exhibit1/AU 15.jpg',
-          './image/exhibit1/AU 16.jpg', './image/exhibit1/AU 17.jpg', './image/exhibit1/AU 18.jpg',
-          './image/exhibit1/AU 19.jpg', './image/exhibit1/AU 20.jpg', './image/exhibit1/AU 21.jpg',
-          './image/exhibit1/AU 22.jpg', './image/exhibit1/AU 23.jpg', './image/exhibit1/AU 24.jpg',
-          './image/exhibit1/AU 25.jpg', './image/exhibit1/AU 26.jpg', './image/exhibit1/AU 27.jpg',
-          './image/exhibit1/AU 28.jpg', './image/exhibit1/AU 29.jpg', './image/exhibit1/SM 30.jpg',
-          // Exhibit 2 images (HEIC files)
-          './image/exhibit2/2025_02_24_00_11_IMG_0872.HEIC', './image/exhibit2/2025_10_20_08_13_IMG_3916.HEIC',
-          './image/exhibit2/2025_10_21_01_00_IMG_3921.HEIC', './image/exhibit2/2025_10_24_07_22_IMG_3953.HEIC',
-          './image/exhibit2/2025_10_24_07_23_IMG_3954.HEIC', './image/exhibit2/2025_10_24_07_23_IMG_3956.HEIC',
-          './image/exhibit2/2025_10_24_07_23_IMG_3957.HEIC', './image/exhibit2/2025_10_24_07_25_IMG_3960.HEIC',
-          './image/exhibit2/2025_10_24_07_25_IMG_3961.HEIC', './image/exhibit2/2025_10_24_07_25_IMG_3962.HEIC',
-          './image/exhibit2/2025_10_24_07_25_IMG_3963.HEIC', './image/exhibit2/2025_10_24_07_25_IMG_3965.HEIC',
-          './image/exhibit2/2025_10_24_07_26_IMG_3966.HEIC', './image/exhibit2/2025_10_24_08_26_IMG_3981.HEIC',
-          './image/exhibit2/2025_10_24_08_26_IMG_3982.HEIC', './image/exhibit2/2025_10_27_02_02_IMG_4089.HEIC',
-          './image/exhibit2/2025_10_27_02_02_IMG_4091.HEIC', './image/exhibit2/2025_10_27_02_04_IMG_4092.HEIC',
-          './image/exhibit2/2025_11_14_03_12_IMG_4182.HEIC', './image/exhibit2/2025_11_14_03_12_IMG_4184.HEIC',
-          './image/exhibit2/2025_11_14_03_12_IMG_4185.HEIC', './image/exhibit2/2025_11_14_03_13_IMG_4186.HEIC',
-          './image/exhibit2/2025_11_14_03_35_IMG_4192.HEIC', './image/exhibit2/2025_11_14_03_35_IMG_4195.HEIC',
-          './image/exhibit2/2025_11_14_03_35_IMG_4196.HEIC', './image/exhibit2/2025_11_14_03_38_IMG_4199.HEIC',
-          './image/exhibit2/2025_11_14_03_38_IMG_4200.HEIC', './image/exhibit2/2025_11_14_03_46_IMG_4208.HEIC',
-          './image/exhibit2/2025_11_14_03_52_IMG_4212.HEIC', './image/exhibit2/2025_11_14_03_56_IMG_4222.HEIC',
-          // Exhibit 3 images
-          './image/exhibit3/2025_11_19_06_18_IMG_7105.HEIC', './image/exhibit3/2025_11_19_06_18_IMG_7106.HEIC',
-          './image/exhibit3/2025_11_19_06_18_IMG_7107.HEIC', './image/exhibit3/2025_11_19_06_18_IMG_7108.HEIC',
-          './image/exhibit3/2025_11_21_05_07_IMG_8922.JPG', './image/exhibit3/2025_11_21_05_07_IMG_8924.JPG',
-          './image/exhibit3/424B0004.JPG', './image/exhibit3/424B0009.JPG', './image/exhibit3/424B0012.JPG',
-          './image/exhibit3/424B0024.JPG', './image/exhibit3/424B0040.JPG', './image/exhibit3/424B0067.JPG',
-          './image/exhibit3/424B0078.JPG', './image/exhibit3/424B0086.JPG', './image/exhibit3/424B0101.JPG',
-          './image/exhibit3/424B0110.JPG', './image/exhibit3/424B0118.JPG', './image/exhibit3/424B0133.JPG',
-          './image/exhibit3/424B0144.JPG', './image/exhibit3/424B0150.JPG', './image/exhibit3/424B0167.JPG',
-          './image/exhibit3/424B0169.JPG', './image/exhibit3/424B0180.JPG', './image/exhibit3/424B0188.JPG',
-          './image/exhibit3/424B0190.JPG', './image/exhibit3/424B0205.JPG', './image/exhibit3/424B0210.JPG',
-          './image/exhibit3/424B0238.JPG', './image/exhibit3/424B0272.JPG', './image/exhibit3/424B0283.JPG',
-          './image/exhibit3/424B0344.JPG', './image/exhibit3/424B0382.JPG', './image/exhibit3/424B0500.JPG',
-          './image/exhibit3/424B0501.JPG', './image/exhibit3/424B0568.JPG', './image/exhibit3/424B0591.JPG',
-          './image/exhibit3/424B9921.JPG', './image/exhibit3/424B9928.JPG', './image/exhibit3/424B9936.JPG',
-          './image/exhibit3/424B9946.JPG', './image/exhibit3/424B9955.JPG', './image/exhibit3/424B9962.JPG',
-          './image/exhibit3/424B9966.JPG', './image/exhibit3/424B9989.JPG', './image/exhibit3/424B9999.JPG',
-          './image/exhibit3/IMG_0074.JPG', './image/exhibit3/IMG_0075.JPG', './image/exhibit3/IMG_0076.JPG',
-          './image/exhibit3/IMG_0077.JPG', './image/exhibit3/IMG_0078.JPG', './image/exhibit3/IMG_0079.JPG',
-          './image/exhibit3/IMG_0100.JPG', './image/exhibit3/IMG_0101.JPG', './image/exhibit3/IMG_0102.JPG',
-          './image/exhibit3/IMG_0103.JPG', './image/exhibit3/IMG_0106.JPG'
-        ];
+<section id="gallery-hero">
+<div class="gallery-hero-content">
+<div class="gallery-hero-overlay">
+<div class="container">
+<div class="gallery-hero-flex">
+<h1 data-aos="fade" data-aos-duration="2000">GALLERY</h1>
+<a href="#gallery-section" class="gallery-view-btn" data-aos="fade" data-aos-duration="2000" data-aos-delay="200">View</a>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-        const galleryContainer = document.getElementById('gallery-container');
-        const paginationContainer = document.getElementById('pagination-container');
-        const totalPages = Math.ceil(allImages.length / imagesPerPage);
+<section id="gallery-section">
+<div class="container4">
+<div class="gallery" id="gallery-container"></div>
+<div class="pagination" id="pagination-container"></div>
+</div>
+</section>
 
-        // Create image elements
-        function createImageElements() {
-          galleryContainer.innerHTML = '';
-          allImages.forEach((src, index) => {
-            const img = document.createElement('img');
-            img.src = src;
-            img.alt = `Gallery Image ${index + 1}`;
-            img.classList.add('hidden');
-            galleryContainer.appendChild(img);
-          });
-        }
+<footer>
+<div class="container2">
+<div class="footer-content">
+<div class="footer-column">
+<h3>Quick Links</h3>
+<ul>
+<li><a href="./index.html">Home</a></li>
+<li><a href="./index.html#about">About</a></li>
+<li><a href="./images.html">Gallery</a></li>
+<li><a href="./locate.html">Locate Us</a></li>
+</ul>
+</div>
+<div class="footer-column footer-logo">
+<img src="./image/school_logo.png" style="max-width:150px;height:auto;">
+</div>
+<div class="footer-column footer-locate">
+<h3>Locate Us</h3>
+<p>8AA, TM3, 1 Otis Ln, Tema</p>
+<p>Phone: +233 555 388 901</p>
+<div class="social-links">
+<a href="https://www.instagram.com/senatorsmontessorischool/" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://web.facebook.com/people/Senators-Montessori-School/100068167177814/?_rdc=1&_rdr#" target="_blank"><i class="fab fa-facebook"></i></a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<p>&copy; 2026 Senators Montessori. All rights reserved.</p>
+</div>
+</div>
+</footer>
 
-        // Show images for current page
-        function showPage(page) {
-          const startIndex = (page - 1) * imagesPerPage;
-          const endIndex = startIndex + imagesPerPage;
-          const images = galleryContainer.querySelectorAll('img');
-          
-          images.forEach((img, index) => {
-            if (index >= startIndex && index < endIndex) {
-              img.classList.remove('hidden');
-            } else {
-              img.classList.add('hidden');
-            }
-          });
-        }
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({once:true});</script>
 
-        // Create pagination buttons
-        function createPagination() {
-          paginationContainer.innerHTML = '';
-          
-          // Previous button
-          const prevBtn = document.createElement('button');
-          prevBtn.textContent = '←';
-          prevBtn.disabled = currentPage === 1;
-          prevBtn.addEventListener('click', () => {
-            if (currentPage > 1) {
-              currentPage--;
-              showPage(currentPage);
-              createPagination();
-              window.scrollTo({ top: galleryContainer.offsetTop - 100, behavior: 'smooth' });
-            }
-          });
-          paginationContainer.appendChild(prevBtn);
+<script>
+(function(){
 
-          // Page number buttons
-          const maxVisiblePages = 7;
-          let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
-          let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
-          
-          if (endPage - startPage < maxVisiblePages - 1) {
-            startPage = Math.max(1, endPage - maxVisiblePages + 1);
-          }
+const imagesPerPage=35;
+let currentPage=1;
 
-          if (startPage > 1) {
-            const firstBtn = document.createElement('button');
-            firstBtn.textContent = '1';
-            firstBtn.addEventListener('click', () => {
-              currentPage = 1;
-              showPage(currentPage);
-              createPagination();
-              window.scrollTo({ top: galleryContainer.offsetTop - 100, behavior: 'smooth' });
-            });
-            paginationContainer.appendChild(firstBtn);
-            
-            if (startPage > 2) {
-              const ellipsis = document.createElement('span');
-              ellipsis.textContent = '...';
-              ellipsis.style.padding = '0 5px';
-              paginationContainer.appendChild(ellipsis);
-            }
-          }
+const allImages=[
+'./image/im1.jpeg','./image/im2.jpeg','./image/im3.jpeg','./image/im4.jpeg','./image/im5.jpeg','./image/im6.jpeg','./image/im7.jpeg','./image/im8.jpeg','./image/im9.jpeg','./image/im10.jpeg','./image/im11.jpeg','./image/im12.jpeg','./image/im13.jpeg','./image/im14.jpeg','./image/im15.jpeg','./image/im16.jpeg','./image/im17.jpeg','./image/im18.jpeg','./image/im19.jpeg','./image/im20.jpeg','./image/im21.jpeg','./image/im22.jpeg','./image/im23.jpeg','./image/im24.jpeg','./image/im25.jpeg','./image/im26.jpeg','./image/im27.jpeg','./image/im28.jpeg','./image/im29.jpeg','./image/im30.jpeg','./image/im32.jpeg','./image/im56.jpeg','./image/im58.jpeg','./image/im59.jpeg','./image/im60.jpeg','./image/im61.jpeg','./image/im62.jpeg','./image/im63.jpeg','./image/im64.jpeg','./image/im65.jpeg','./image/im66.jpeg','./image/im67.jpeg','./image/im68.jpeg','./image/im69.jpeg','./image/im70.jpeg','./image/im71.jpeg','./image/im72.jpeg','./image/im73.jpeg','./image/im74.jpeg','./image/im75.jpeg','./image/im76.jpeg','./image/im77.jpeg','./image/im78.jpeg','./image/im79.jpeg','./image/im80.jpeg','./image/im81.jpeg','./image/im82.jpeg','./image/im83.jpeg','./image/im84.jpeg','./image/im85.jpeg','./image/im86.jpeg','./image/im87.jpeg','./image/im88.jpeg','./image/im89.jpeg','./image/im90.jpeg','./image/im91.jpeg','./image/im92.jpeg','./image/im93.jpeg','./image/im94.jpeg','./image/im95.jpeg','./image/im96.jpeg','./image/im97.jpeg','./image/im98.jpeg','./image/im100.jpeg','./image/im101.jpeg','./image/im102.jpeg','./image/im103.jpeg','./image/im104.jpeg','./image/im105.jpeg','./image/im106.jpeg',
+'./image/exhibit1/AU 1.jpg','./image/exhibit1/AU 2.jpg','./image/exhibit1/AU 3.jpg','./image/exhibit1/AU 4.jpg','./image/exhibit1/AU 5.jpg','./image/exhibit1/AU 6.jpg','./image/exhibit1/AU 7.jpg','./image/exhibit1/AU 8.jpg','./image/exhibit1/AU 9.jpg','./image/exhibit1/AU 10.jpg','./image/exhibit1/AU 11.jpg','./image/exhibit1/AU 12.jpg','./image/exhibit1/AU 13.jpg','./image/exhibit1/AU 14.jpg','./image/exhibit1/AU 15.jpg','./image/exhibit1/AU 16.jpg','./image/exhibit1/AU 17.jpg','./image/exhibit1/AU 18.jpg','./image/exhibit1/AU 19.jpg','./image/exhibit1/AU 20.jpg','./image/exhibit1/AU 21.jpg','./image/exhibit1/AU 22.jpg','./image/exhibit1/AU 23.jpg','./image/exhibit1/AU 24.jpg','./image/exhibit1/AU 25.jpg','./image/exhibit1/AU 26.jpg','./image/exhibit1/AU 27.jpg','./image/exhibit1/AU 28.jpg','./image/exhibit1/AU 29.jpg','./image/exhibit1/SM 30.jpg',
+'./image/exhibit2/2025_02_24_00_11_IMG_0872.HEIC','./image/exhibit2/2025_10_20_08_13_IMG_3916.HEIC','./image/exhibit2/2025_10_21_01_00_IMG_3921.HEIC','./image/exhibit2/2025_10_24_07_22_IMG_3953.HEIC','./image/exhibit2/2025_10_24_07_23_IMG_3954.HEIC','./image/exhibit2/2025_10_24_07_23_IMG_3956.HEIC','./image/exhibit2/2025_10_24_07_23_IMG_3957.HEIC','./image/exhibit2/2025_10_24_07_25_IMG_3960.HEIC','./image/exhibit2/2025_10_24_07_25_IMG_3961.HEIC','./image/exhibit2/2025_10_24_07_25_IMG_3962.HEIC','./image/exhibit2/2025_10_24_07_25_IMG_3963.HEIC','./image/exhibit2/2025_10_24_07_25_IMG_3965.HEIC','./image/exhibit2/2025_10_24_07_26_IMG_3966.HEIC','./image/exhibit2/2025_10_24_08_26_IMG_3981.HEIC','./image/exhibit2/2025_10_24_08_26_IMG_3982.HEIC','./image/exhibit2/2025_10_27_02_02_IMG_4089.HEIC','./image/exhibit2/2025_10_27_02_02_IMG_4091.HEIC','./image/exhibit2/2025_10_27_02_04_IMG_4092.HEIC','./image/exhibit2/2025_11_14_03_12_IMG_4182.HEIC','./image/exhibit2/2025_11_14_03_12_IMG_4184.HEIC','./image/exhibit2/2025_11_14_03_12_IMG_4185.HEIC','./image/exhibit2/2025_11_14_03_13_IMG_4186.HEIC','./image/exhibit2/2025_11_14_03_35_IMG_4192.HEIC','./image/exhibit2/2025_11_14_03_35_IMG_4195.HEIC','./image/exhibit2/2025_11_14_03_35_IMG_4196.HEIC','./image/exhibit2/2025_11_14_03_38_IMG_4199.HEIC','./image/exhibit2/2025_11_14_03_38_IMG_4200.HEIC','./image/exhibit2/2025_11_14_03_46_IMG_4208.HEIC','./image/exhibit2/2025_11_14_03_52_IMG_4212.HEIC','./image/exhibit2/2025_11_14_03_56_IMG_4222.HEIC',
+'./image/exhibit3/2025_11_19_06_18_IMG_7105.HEIC','./image/exhibit3/2025_11_19_06_18_IMG_7106.HEIC','./image/exhibit3/2025_11_19_06_18_IMG_7107.HEIC','./image/exhibit3/2025_11_19_06_18_IMG_7108.HEIC','./image/exhibit3/2025_11_21_05_07_IMG_8922.JPG','./image/exhibit3/2025_11_21_05_07_IMG_8924.JPG','./image/exhibit3/424B0004.JPG','./image/exhibit3/424B0009.JPG','./image/exhibit3/424B0012.JPG','./image/exhibit3/424B0024.JPG','./image/exhibit3/424B0040.JPG','./image/exhibit3/424B0067.JPG','./image/exhibit3/424B0078.JPG','./image/exhibit3/424B0086.JPG','./image/exhibit3/424B0101.JPG','./image/exhibit3/424B0110.JPG','./image/exhibit3/424B0118.JPG','./image/exhibit3/424B0133.JPG','./image/exhibit3/424B0144.JPG','./image/exhibit3/424B0150.JPG','./image/exhibit3/424B0167.JPG','./image/exhibit3/424B0169.JPG','./image/exhibit3/424B0180.JPG','./image/exhibit3/424B0188.JPG','./image/exhibit3/424B0190.JPG','./image/exhibit3/424B0205.JPG','./image/exhibit3/424B0210.JPG','./image/exhibit3/424B0238.JPG','./image/exhibit3/424B0272.JPG','./image/exhibit3/424B0283.JPG','./image/exhibit3/424B0344.JPG','./image/exhibit3/424B0382.JPG','./image/exhibit3/424B0500.JPG','./image/exhibit3/424B0501.JPG','./image/exhibit3/424B0568.JPG','./image/exhibit3/424B0591.JPG','./image/exhibit3/424B9921.JPG','./image/exhibit3/424B9928.JPG','./image/exhibit3/424B9936.JPG','./image/exhibit3/424B9946.JPG','./image/exhibit3/424B9955.JPG','./image/exhibit3/424B9962.JPG','./image/exhibit3/424B9966.JPG','./image/exhibit3/424B9989.JPG','./image/exhibit3/424B9999.JPG','./image/exhibit3/IMG_0074.JPG','./image/exhibit3/IMG_0075.JPG','./image/exhibit3/IMG_0076.JPG','./image/exhibit3/IMG_0077.JPG','./image/exhibit3/IMG_0078.JPG','./image/exhibit3/IMG_0079.JPG','./image/exhibit3/IMG_0100.JPG','./image/exhibit3/IMG_0101.JPG','./image/exhibit3/IMG_0102.JPG','./image/exhibit3/IMG_0103.JPG','./image/exhibit3/IMG_0106.JPG'
+];
 
-          for (let i = startPage; i <= endPage; i++) {
-            const pageBtn = document.createElement('button');
-            pageBtn.textContent = i;
-            if (i === currentPage) {
-              pageBtn.classList.add('active');
-            }
-            pageBtn.addEventListener('click', () => {
-              currentPage = i;
-              showPage(currentPage);
-              createPagination();
-              window.scrollTo({ top: galleryContainer.offsetTop - 100, behavior: 'smooth' });
-            });
-            paginationContainer.appendChild(pageBtn);
-          }
+const galleryContainer=document.getElementById('gallery-container');
+const paginationContainer=document.getElementById('pagination-container');
+const totalPages=Math.ceil(allImages.length/imagesPerPage);
 
-          if (endPage < totalPages) {
-            if (endPage < totalPages - 1) {
-              const ellipsis = document.createElement('span');
-              ellipsis.textContent = '...';
-              ellipsis.style.padding = '0 5px';
-              paginationContainer.appendChild(ellipsis);
-            }
-            
-            const lastBtn = document.createElement('button');
-            lastBtn.textContent = totalPages;
-            lastBtn.addEventListener('click', () => {
-              currentPage = totalPages;
-              showPage(currentPage);
-              createPagination();
-              window.scrollTo({ top: galleryContainer.offsetTop - 100, behavior: 'smooth' });
-            });
-            paginationContainer.appendChild(lastBtn);
-          }
+async function createImageElements(){
+galleryContainer.innerHTML='';
+for(let i=0;i<allImages.length;i++){
+const src=allImages[i];
+const img=document.createElement('img');
+img.alt=`Gallery Image ${i+1}`;
+img.classList.add('hidden');
+if(src.toLowerCase().endsWith('.heic')){
+try{
+const response=await fetch(src);
+const blob=await response.blob();
+const converted=await heic2any({blob:blob,toType:"image/jpeg",quality:0.8});
+img.src=URL.createObjectURL(converted);
+}catch(e){console.error("HEIC failed:",src);}
+}else{
+img.src=src;
+}
+galleryContainer.appendChild(img);
+}
+}
 
-          // Next button
-          const nextBtn = document.createElement('button');
-          nextBtn.textContent = '→';
-          nextBtn.disabled = currentPage === totalPages;
-          nextBtn.addEventListener('click', () => {
-            if (currentPage < totalPages) {
-              currentPage++;
-              showPage(currentPage);
-              createPagination();
-              window.scrollTo({ top: galleryContainer.offsetTop - 100, behavior: 'smooth' });
-            }
-          });
-          paginationContainer.appendChild(nextBtn);
-        }
+function showPage(page){
+const start=(page-1)*imagesPerPage;
+const end=start+imagesPerPage;
+const images=galleryContainer.querySelectorAll('img');
+images.forEach((img,index)=>{
+if(index>=start&&index<end){img.classList.remove('hidden');}
+else{img.classList.add('hidden');}
+});
+}
 
-        // Initialize gallery
-        createImageElements();
-        showPage(1);
-        createPagination();
-      })();
-    </script>
+function createPagination(){
+paginationContainer.innerHTML='';
+const prev=document.createElement('button');
+prev.textContent='←';
+prev.disabled=currentPage===1;
+prev.onclick=()=>{if(currentPage>1){currentPage--;showPage(currentPage);createPagination();window.scrollTo({top:galleryContainer.offsetTop-100,behavior:'smooth'});}};
+paginationContainer.appendChild(prev);
+for(let i=1;i<=totalPages;i++){
+const btn=document.createElement('button');
+btn.textContent=i;
+if(i===currentPage)btn.classList.add('active');
+btn.onclick=()=>{currentPage=i;showPage(currentPage);createPagination();window.scrollTo({top:galleryContainer.offsetTop-100,behavior:'smooth'});};
+paginationContainer.appendChild(btn);
+}
+const next=document.createElement('button');
+next.textContent='→';
+next.disabled=currentPage===totalPages;
+next.onclick=()=>{if(currentPage<totalPages){currentPage++;showPage(currentPage);createPagination();window.scrollTo({top:galleryContainer.offsetTop-100,behavior:'smooth'});}};
+paginationContainer.appendChild(next);
+}
+
+(async function init(){
+await createImageElements();
+showPage(1);
+createPagination();
+})();
+
+})();
+</script>
+
 </body>
 </html>
